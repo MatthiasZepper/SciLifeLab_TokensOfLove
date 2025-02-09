@@ -10,9 +10,10 @@
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=scAqua, urlcolor=scAqua, citecolor=scAqua}
-\usepackage{bibentry}
-\usepackage[backend=biber,style=ieee, citestyle=authoryear]{biblatex}
-\bibliography{literature/scilifelabllms}
+
+\usepackage[backend=biber,style=apa, sortcites=true,sorting=nyt]{biblatex}
+\addbibresource{literature/scilifelabllms.bib}
+
 
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot}
@@ -21,7 +22,7 @@
 \newcommand{\themename}{\textbf{\textsc{scilifelab}}\xspace}
 \newcommand{\credit}[1]{{\par \raggedleft \scriptsize \mdseries \color{mDarkBrown} #1 \par}}
 \newcommand{\creditdark}[1]{{\par \raggedleft \scriptsize \mdseries \color{scMGray} #1 \par}}
-\newcommand{\citeme}[1]{{\xspace\color{scAqua} \scriptsize \cite{#1}}}
+\newcommand{\citeme}[1]{{\xspace\color{scAqua} \scriptsize [\cite{#1}]}}
 
 \title{Token(s) of love}
 \subtitle{Potentials and pitfalls of LLM use in our daily work tasks}
@@ -40,6 +41,9 @@
 	\caption{A person in love with AI models and computers. Created with the open-weights 'FLUX.1 [schnell]' model by Black Forest Labs.}
 \end{figure}
 \credit{https://blackforestlabs.ai, https://github.com/black-forest-labs/flux}
+%%invisible fake citation needed for Biber to pick up any citations, since I am using a custom cite command.
+\vspace{2cm}
+\cite{Blum2023}
 \end{frame}
 
 \begin{frame}{AI integrations and services everywhere}
@@ -105,7 +109,7 @@
 		
 		\begin{figure}
 			\includegraphics[width=1.17\textwidth]{figures/Juzek2024-Fig4.png}
-			\caption{Words like “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22delving\%20into\%22\&filter=years.2010-2024&timeline=expanded}{delving into}”, “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22intricate\%22&filter=years.2010-2024&timeline=expanded}{intricate}” and “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22tapestry\%22&filter=years.2010-2024&timeline=expanded}{tapestry}” recently appear far more frequently in abstracts of scientific publications, likely reflecting LLM use for copy editing.\citeme{Kobak2024, Juzek2024}}
+			\caption{Words like “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22delving\%20into\%22\&filter=years.2010-2024&timeline=expanded}{delving into}”, “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22intricate\%22&filter=years.2010-2024&timeline=expanded}{intricate}” and “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22tapestry\%22&filter=years.2010-2024&timeline=expanded}{tapestry}” recently appear far more frequently in abstracts of scientific publications, likely reflecting LLM use for copy editing.\citeme{Juzek2024}}
 		\end{figure}
 
 	\end{columns}
@@ -218,10 +222,12 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 \appendix
-
-\begin{frame}[allowframebreaks]
-	\frametitle{References}
-	\printbibliography
+\section{References}
+\begin{frame}[allowframebreaks]{References}
+\begingroup
+\tiny \selectfont
+\printbibliography[heading=none]
+\endgroup
 \end{frame}
 
 \end{document}
