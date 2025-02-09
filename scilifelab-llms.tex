@@ -191,16 +191,17 @@
 			P(w_1, \cdots. w_{n})
 			$$
 		\end{exampleblock}
-		\textbf{Example:}
+		\textbf{Examples:}
 			\begin{itemize}
 				\item SciLifeLab is a national resource of unique technologies and expertise available to life scientists.
 				\item SciLifeLab is a burger restaurant next to Odenplan.
+				\item Paroo vajolette esfi SciLifeLab snorzi palque Quatbazz hos ump.
 			\end{itemize}
 \end{frame}
 
 \begin{frame}{Neural net language models}
 	\metroset{block=fill}
-	\begin{exampleblock}{Machine learning language models}
+	\begin{exampleblock}{Training phase (Machine learning)}
 		    \begin{itemize}
 		    	\item have flexible \feature{parameters} and are trained by \feature{backpropagation}.
 	 \item learn to predict next word in the sequence based on the \feature{context}.
@@ -209,7 +210,7 @@
 			$$
 			\end{itemize}
 	\end{exampleblock}
-		\textbf{Example:}
+		\textbf{Known or desired outcomes are distilled into training data:}
 \begin{itemize}
 	\item $\uparrow \uparrow \uparrow$ SciLifeLab is a national resource of unique technologies and expertise available to life scientists.
 	\item $\downarrow \downarrow \downarrow$ SciLifeLab is a burger restaurant next to Odenplan.
@@ -217,19 +218,37 @@
 \end{frame}
 
 
-\begin{frame}{A language model is a probability distribution over sequences of words}
-	
-	It assigns a probability for a sequence of words
-	
-	$$
-	P(w_1, \cdots. w_{n})
-	$$
-	
-
-	
-	\emph{SciLifeLab is a Swedish ...}
-	
+\begin{frame}{Generative language models}
+	\metroset{block=fill}
+	\begin{exampleblock}{Interference}
+		\begin{itemize}
+			\item is the process of using a \feature{pre-trained} model (fixed \feature{parameters}) and adding one or multiple words to the context.
+		\end{itemize}
+	\end{exampleblock}
+	\textbf{Repeated cycles of adding to the \feature{context window}}
+	\begin{enumerate}
+		\item  SciLifeLab is a national resource of...
+		\item SciLifeLab is a national resource of \emph{word} \emph{word} ...
+		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word}...
+		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word} \emph{word}...
+	\end{enumerate}
 \end{frame}
+
+
+\begin{frame}{What happened in the past years?}
+		
+	\begin{alertblock}{GPT-2 (2019) }
+		\small
+			\textbf{SciLifeLab is a national resource of} the National Science Foundation, the National Institutes of Health, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation
+	\end{alertblock}
+		
+	\begin{alertblock}{GPT-4o (2025)}
+		\small
+		\textbf{SciLifeLab is a national resource [of]} in Sweden for advanced life science research. It serves as a center for molecular biosciences, supporting research in areas like genomics, proteomics, and bioinformatics. SciLifeLab provides access to cutting-edge technologies, expertise, and platforms for a wide range of life science disciplines, such as medicine, environmental studies, and drug development. The lab is a collaboration between several Swedish universities and research institutions, aiming to foster interdisciplinary research and innovation in life sciences.
+	\end{alertblock}
+	 \emph{$\rightarrow$ Inclusion in training data? RAG?}
+\end{frame}
+
 
 
 % % % % % % % % % % % % % % % % % %
@@ -261,27 +280,7 @@
 
 % % % % % % % % % % % % % % % % % 
 
-\begin{frame}{Twisted transcription}
-\begin{columns}[T,onlytextwidth]
-	
-	\column{0.5\textwidth}
-	
-	\begin{alertblock}{Overlapping genes}
 
-	\end{alertblock}
-
-	\column{0.5\textwidth}
-
-	\begin{alertblock}{Outron}
-	\begin{itemize}
-		\item At the 5' end of the primary transcript of a gene.
-		\item Singular splice acceptor site, subject to trans-splicing.
-		\item 70\% of C. elegans mRNAs are trans-spliced to 22bp spliced leaders
-	\end{itemize}
-	\end{alertblock}
-
-\end{columns}
-\end{frame}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
