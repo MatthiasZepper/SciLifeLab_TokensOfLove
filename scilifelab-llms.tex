@@ -10,7 +10,9 @@
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=scAqua, urlcolor=scAqua, citecolor=scAqua}
-%\usepackage{natbib}
+\usepackage{bibentry}
+\usepackage[backend=biber,style=ieee, citestyle=authoryear]{biblatex}
+\bibliography{literature/scilifelabllms}
 
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot}
@@ -18,6 +20,7 @@
 \usepackage{xspace}
 \newcommand{\themename}{\textbf{\textsc{scilifelab}}\xspace}
 \newcommand{\credit}[1]{{\par \raggedleft \scriptsize \mdseries \color{mDarkBrown} #1 \par}}
+\newcommand{\creditdark}[1]{{\par \raggedleft \scriptsize \mdseries \color{scMGray} #1 \par}}
 \newcommand{\citeme}[1]{{\xspace\color{scAqua} \scriptsize \cite{#1}}}
 
 \title{Token(s) of love}
@@ -39,6 +42,40 @@
 \credit{https://blackforestlabs.ai, https://github.com/black-forest-labs/flux}
 \end{frame}
 
+\begin{frame}{AI integrations and services everywhere}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-1.1cm} 
+		\column{0.2\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/Valentine_s_Day_gift_card_square.png}
+		\end{figure}
+		\column{0.8\textwidth}
+		\begin{itemize}
+			\item One-click automated data analysis
+			\item AI pipeline developer \& QC report interpreter
+			\item Synthetic DNA generation for strains or antibody optimization. 
+		\end{itemize}
+	\vspace{0.3cm} 
+	\end{columns}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-1.1cm} 
+		\column{0.4\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/GenerativeAI_DNA_Analysis_Mithrl.png}
+			\creditdark{https://www.mithrl.com}
+		\end{figure}
+		\column{0.4\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/GenerativeAI_DNA_Analysis_Seqera.png}
+			\creditdark{https://seqera.io/ask-ai/}
+		\end{figure}
+			\column{0.4\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/GenerativeAI_DNA_Analysis_Ginkgo.png}
+			\creditdark{https://www.ginkgo.bio/platform \xspace}
+		\end{figure}
+	\end{columns}
+\end{frame}
 
 \begin{frame}{Encounters with AI generated content are inevitable...*}
 	
@@ -68,7 +105,7 @@
 		
 		\begin{figure}
 			\includegraphics[width=1.17\textwidth]{figures/Juzek2024-Fig4.png}
-			\caption{Words like “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22delving\%20into\%22\&filter=years.2010-2024&timeline=expanded}{delving into}”, “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22intricate\%22&filter=years.2010-2024&timeline=expanded}{intricate}” and “tapestry” recently appear far more frequently in abstracts of scientific publications, likely reflecting LLM use for copy editing.\citeme{Juzek2024}}
+			\caption{Words like “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22delving\%20into\%22\&filter=years.2010-2024&timeline=expanded}{delving into}”, “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22intricate\%22&filter=years.2010-2024&timeline=expanded}{intricate}” and “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22tapestry\%22&filter=years.2010-2024&timeline=expanded}{tapestry}” recently appear far more frequently in abstracts of scientific publications, likely reflecting LLM use for copy editing.\citeme{Kobak2024, Juzek2024}}
 		\end{figure}
 
 	\end{columns}
@@ -81,7 +118,38 @@
 	\end{figure}
 \end{frame}
 
+\begin{frame}{Search engines start failing to find meaningful content}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/marcusg-google.png}
+			\caption{Early essay extending the model collapse scenario to search engines.\citeme{Marcus2023}}
+		\end{figure}
+		\column{0.5\textwidth}
+		
+		\begin{figure}
+			\includegraphics[width=1.17\textwidth]{figures/holmer-parasiticcancer.png}
+			\caption{For some technical terms, all major search engines overweight AI-generated content heavily.\citeme{Holmer2025}}
+		\end{figure}
+		
+	\end{columns}
+\end{frame}
 
+\begin{frame}[standout]{Whatever the future will bring...}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.4\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/Valentine_s_Day_gift_card_impressionistic_style_VanGogh_style_painting_big_heart.png}
+		\end{figure}
+		\column{0.6\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/Oil_painting_of_a_city_after_the_war_ruins_many_broken_computers_littered_all_over_broken_screens_an_2371238122.png}
+		\end{figure}
+	\end{columns}
+\creditdark{https://github.com/black-forest-labs/flux}
+\end{frame}
 % % % % % % % % % % % % % % % % % % % % % % %55
 
 
@@ -92,10 +160,6 @@
 
 
 
-
-\begin{frame}[standout]{aasdas}
-UAG
-\end{frame}
 
 
 
@@ -155,9 +219,9 @@ UAG
 
 \appendix
 
-\begin{frame}[allowframebreaks]{References}
-\bibliography{literature/scilifelab-llms}
-\bibliographystyle{apalike}
+\begin{frame}[allowframebreaks]
+	\frametitle{References}
+	\printbibliography
 \end{frame}
 
 \end{document}
