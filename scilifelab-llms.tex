@@ -23,6 +23,7 @@
 \newcommand{\credit}[1]{{\par \raggedleft \scriptsize \mdseries \color{mDarkBrown} #1 \par}}
 \newcommand{\creditdark}[1]{{\par \raggedleft \scriptsize \mdseries \color{scMGray} #1 \par}}
 \newcommand{\citeme}[1]{{\xspace\color{scAqua} \scriptsize [\cite{#1}]}}
+\newcommand{\feature}[1]{{\color{scLime} \textbf{#1}}}
 
 \title{Token(s) of love}
 \subtitle{Potentials and pitfalls of LLM use in our daily work tasks}
@@ -109,7 +110,7 @@
 		
 		\begin{figure}
 			\includegraphics[width=1.17\textwidth]{figures/Juzek2024-Fig4.png}
-			\caption{Words like “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22delving\%20into\%22\&filter=years.2010-2024&timeline=expanded}{delving into}”, “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22intricate\%22&filter=years.2010-2024&timeline=expanded}{intricate}” and “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22tapestry\%22&filter=years.2010-2024&timeline=expanded}{tapestry}” recently appear far more frequently in abstracts of scientific publications, likely reflecting LLM use for copy editing.\citeme{Juzek2024}}
+			\caption{Words like “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22delving\%20into\%22\&filter=years.2010-2024&timeline=expanded}{delving into}”, “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22intricate\%22&filter=years.2010-2024&timeline=expanded}{intricate}” and “\href{https://pubmed.ncbi.nlm.nih.gov/?term=\%22tapestry\%22&filter=years.2010-2024&timeline=expanded}{tapestry}” recently appear far more frequently in abstracts of scientific publications, likely reflecting LLM use for copy editing.\citeme{Kobak2024,Juzek2024}}
 		\end{figure}
 
 	\end{columns}
@@ -142,30 +143,93 @@
 
 \begin{frame}[standout]{Whatever the future will bring...}
 	\begin{columns}[T,onlytextwidth]
+		\normalfont \normalsize
 		\hspace*{-0.7cm} 
 		\column{0.4\textwidth}
 		\begin{figure}
 			\includegraphics[width=\textwidth]{figures/Valentine_s_Day_gift_card_impressionistic_style_VanGogh_style_painting_big_heart.png}
 		\end{figure}
+		\begin{itemize}
+		\item Productivity (assistants)
+		\item Knowledge access / tuition  \vspace{0.5cm}\linebreak
+		\emph{ $\rightarrow$ Empowerment of disadvantaged groups?}
+	\end{itemize}
 		\column{0.6\textwidth}
 		\begin{figure}
 			\includegraphics[width=\textwidth]{figures/Oil_painting_of_a_city_after_the_war_ruins_many_broken_computers_littered_all_over_broken_screens_an_2371238122.png}
+			\creditdark{https://github.com/black-forest-labs/flux}
+				\begin{itemize}
+				\item Pauperism (Swing riots, Weavers' uprising)
+				\item Fake news, content and imagery\vspace{0.5cm} \linebreak 
+						\emph{$\rightarrow$ Erosion of trust in society?}
+			\end{itemize}
 		\end{figure}
 	\end{columns}
-\creditdark{https://github.com/black-forest-labs/flux}
 \end{frame}
-% % % % % % % % % % % % % % % % % % % % % % %55
 
 
- 
+\begin{frame}{... technology is ever-changing and generative AI is here to stay}
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/IgnorantCalvin.jpg}
+	\caption{Calvin and Hobbes by Bill Watterson for January 05, 1993}
+\end{figure}
+\credit{https://www.gocomics.com/calvinandhobbes/1993/01/05}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % % %%%
+
+ \section{How do generative AI models (particularly LLMs) work?}
 
 % % % % % % % % % % % % % % % % % % % % % % % % %
 
 
+\begin{frame}{A language model is a probability distribution over sequences of words}
+		\metroset{block=fill}
+		\begin{exampleblock}{A language model}
+			assigns a probability for a sequence of words
+			$$
+			P(w_1, \cdots. w_{n})
+			$$
+		\end{exampleblock}
+		\textbf{Example:}
+			\begin{itemize}
+				\item SciLifeLab is a national resource of unique technologies and expertise available to life scientists.
+				\item SciLifeLab is a burger restaurant next to Odenplan.
+			\end{itemize}
+\end{frame}
+
+\begin{frame}{Neural net language models}
+	\metroset{block=fill}
+	\begin{exampleblock}{Machine learning language models}
+		    \begin{itemize}
+		    	\item have flexible \feature{parameters} and are trained by \feature{backpropagation}.
+	 \item learn to predict next word in the sequence based on the \feature{context}.
+			$$
+			P(w_{i}|{\mathrm  {context}})
+			$$
+			\end{itemize}
+	\end{exampleblock}
+		\textbf{Example:}
+\begin{itemize}
+	\item $\uparrow \uparrow \uparrow$ SciLifeLab is a national resource of unique technologies and expertise available to life scientists.
+	\item $\downarrow \downarrow \downarrow$ SciLifeLab is a burger restaurant next to Odenplan.
+\end{itemize}
+\end{frame}
 
 
+\begin{frame}{A language model is a probability distribution over sequences of words}
+	
+	It assigns a probability for a sequence of words
+	
+	$$
+	P(w_1, \cdots. w_{n})
+	$$
+	
 
-
+	
+	\emph{SciLifeLab is a Swedish ...}
+	
+\end{frame}
 
 
 % % % % % % % % % % % % % % % % % %
