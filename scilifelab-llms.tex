@@ -177,11 +177,11 @@
 \credit{https://www.gocomics.com/calvinandhobbes/1993/01/05}
 \end{frame}
 
-% % % % % % % % % % % % % % % % % % % % % % %%%
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
 
- \section{How do generative AI models (particularly LLMs) work?}
+\section{How do generative AI models (particularly LLMs) work?}
 
-% % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 
 \begin{frame}{A language model is a probability distribution over sequences of words}
@@ -200,18 +200,41 @@
 			\end{itemize}
 \end{frame}
 
+\begin{frame}{Analogy of the model training process: Regression}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item The model's formula corresponds to the \feature{architecture} of a LLM:
+			\begin{description}
+				\item[Exponential:] $y=ae^{bx}$
+				\item[Quadratic:] $y=ax^2 + bx + c$
+				\item[Sinusoidal:] $y=a sin(bx)$
+			\end{description}
+			\item During training, the model's \feature{parameters} ($a$,$b$,$c$) are optimized.
+		\end{itemize}
+		\remark{A real LLM architecture is very different from these simple examples and has billions of parameters.}
+		\column{0.5\textwidth}	
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/NonlinearRegression.png}
+			\caption{Example of a "training" a model}
+		\end{figure}
+		
+	\end{columns}
+\end{frame}
+
 \begin{frame}{Neural net language models}
 	\metroset{block=fill}
 	\begin{exampleblock}{Training phase (Machine learning)}
-		    \begin{itemize}
-		    	\item have flexible \feature{parameters} and are optimized  (\feature{trained}) by \feature{backpropagation}.
-	 \item learn to predict next word in the sequence based on the \feature{context}.
+		\begin{itemize}
+		\item have flexible \feature{parameters} and are optimized  () by \feature{backpropagation}.
+		\item learn to predict next word in the sequence based on the \feature{context}.
 			$$
 			P(w_{i}|{\mathrm  {context}})
 			$$
 			\end{itemize}
 	\end{exampleblock}
-		\textbf{Known or desired outcomes are distilled into training data:}
+		\textbf{Curated training data collects known or desired outcomes:}
 \begin{itemize}
 	\item $\uparrow \uparrow \uparrow$ SciLifeLab is a national resource of unique technologies and expertise available to life scientists.
 	\item $\downarrow$ SciLifeLab is a burger restaurant next to Odenplan.
@@ -228,12 +251,12 @@
 	\end{exampleblock}
 	\textbf{Repeated cycles of adding to the \feature{context window}}
 	\begin{enumerate}
-		\item  SciLifeLab is a national resource of...
+		\item SciLifeLab is a national resource of...
 		\item SciLifeLab is a national resource of \emph{word} \emph{word} ...
 		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word}...
 		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word} \emph{word}...
 	\end{enumerate}
-	 \remark{Other natural language processing tasks include, e.g. classification, summarization, translation}
+\remark{Other natural language processing tasks include, e.g. classification, summarization, translation}
 \end{frame}
 
 
@@ -241,14 +264,14 @@
 		
 	\begin{alertblock}{GPT-2 (2019) }
 		\small
-			\textbf{SciLifeLab is a national resource of} the National Science Foundation, the National Institutes of Health, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation
+		\textbf{SciLifeLab is a national resource of} the National Science Foundation, the National Institutes of Health, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation
 	\end{alertblock}
 		
 	\begin{alertblock}{GPT-4 (2025)}
 		\small
 		\textbf{SciLifeLab is a national resource [of]} in Sweden for advanced life science research. It serves as a center for molecular biosciences, supporting research in areas like genomics, proteomics, and bioinformatics. SciLifeLab provides access to cutting-edge technologies, expertise, and platforms for a wide range of life science disciplines, such as medicine, environmental studies, and drug development. The lab is a collaboration between several Swedish universities and research institutions, aiming to foster interdisciplinary research and innovation in life sciences.
 	\end{alertblock}
-	 \remark{The model has access to more context than given by the prompt!}
+	\remark{The model has access to more context than given by the prompt!}
 \end{frame}
 
 \begin{frame}{Text generation with more context from SciLifeLab website}
@@ -257,7 +280,7 @@
 		\small
 		\textbf{SciLifeLab is a national resource of unique technologies and expertise available to life scientists, closely intertwined with our community of researchers in areas such as biomedicine, ecology and evolution. We bring scientists together across traditional boundaries and foster collaborations with industry, health care, public research organizations and international partners. Therfore, SciLifeLab is}  a great place to learn about the science and technology of life sciences, and to learn about the challenges of life sciences research.
 		
-		We are committed to providing a safe, safe and secure environment for all our scientists. We are committed to providing a safe, safe and secure environment for all our patients. We are committed to providing a safe, safe and secure environment for all our scientists. We are committed to
+		We are committed to providing a safe, safe and secure environment for all our scientists. We are committed to providing a safe, safe and secure environment for all our patients. We are committed to providing a safe, safe and secure environment for all our scientists.
 	\end{alertblock}
 	
 	\remark{More context does not straightforwardly increase output quality}
