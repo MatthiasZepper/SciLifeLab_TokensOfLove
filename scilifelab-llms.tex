@@ -24,6 +24,7 @@
 \newcommand{\creditdark}[1]{{\par \raggedleft \scriptsize \mdseries \color{scMGray} #1 \par}}
 \newcommand{\citeme}[1]{{\xspace\color{scAqua} \scriptsize [\cite{#1}]}}
 \newcommand{\feature}[1]{{\color{scLime} \textbf{#1}}}
+\newcommand{\remark}[1]{{\par \color{scGrape} \ensuremath{\rightarrow} \emph{#1}}}
 
 \title{Token(s) of love}
 \subtitle{Potentials and pitfalls of LLM use in our daily work tasks}
@@ -203,7 +204,7 @@
 	\metroset{block=fill}
 	\begin{exampleblock}{Training phase (Machine learning)}
 		    \begin{itemize}
-		    	\item have flexible \feature{parameters} and are trained by \feature{backpropagation}.
+		    	\item have flexible \feature{parameters} and are optimized  (\feature{trained}) by \feature{backpropagation}.
 	 \item learn to predict next word in the sequence based on the \feature{context}.
 			$$
 			P(w_{i}|{\mathrm  {context}})
@@ -213,14 +214,14 @@
 		\textbf{Known or desired outcomes are distilled into training data:}
 \begin{itemize}
 	\item $\uparrow \uparrow \uparrow$ SciLifeLab is a national resource of unique technologies and expertise available to life scientists.
-	\item $\downarrow \downarrow \downarrow$ SciLifeLab is a burger restaurant next to Odenplan.
+	\item $\downarrow$ SciLifeLab is a burger restaurant next to Odenplan.
 \end{itemize}
 \end{frame}
 
 
 \begin{frame}{Generative language models}
 	\metroset{block=fill}
-	\begin{exampleblock}{Interference}
+	\begin{exampleblock}{Inference}
 		\begin{itemize}
 			\item is the process of using a \feature{pre-trained} model (fixed \feature{parameters}) and adding one or multiple words to the context.
 		\end{itemize}
@@ -232,21 +233,34 @@
 		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word}...
 		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word} \emph{word}...
 	\end{enumerate}
+	 \remark{Other natural language processing tasks include, e.g. classification, summarization, translation}
 \end{frame}
 
 
-\begin{frame}{What happened in the past years?}
+\begin{frame}{Text generation with little context}
 		
 	\begin{alertblock}{GPT-2 (2019) }
 		\small
 			\textbf{SciLifeLab is a national resource of} the National Science Foundation, the National Institutes of Health, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation
 	\end{alertblock}
 		
-	\begin{alertblock}{GPT-4o (2025)}
+	\begin{alertblock}{GPT-4 (2025)}
 		\small
 		\textbf{SciLifeLab is a national resource [of]} in Sweden for advanced life science research. It serves as a center for molecular biosciences, supporting research in areas like genomics, proteomics, and bioinformatics. SciLifeLab provides access to cutting-edge technologies, expertise, and platforms for a wide range of life science disciplines, such as medicine, environmental studies, and drug development. The lab is a collaboration between several Swedish universities and research institutions, aiming to foster interdisciplinary research and innovation in life sciences.
 	\end{alertblock}
-	 \emph{$\rightarrow$ Inclusion in training data? RAG?}
+	 \remark{The model has access to more context than given by the prompt!}
+\end{frame}
+
+\begin{frame}{Text generation with more context from SciLifeLab website}
+	
+	\begin{alertblock}{GPT-2 (2019) }
+		\small
+		\textbf{SciLifeLab is a national resource of unique technologies and expertise available to life scientists, closely intertwined with our community of researchers in areas such as biomedicine, ecology and evolution. We bring scientists together across traditional boundaries and foster collaborations with industry, health care, public research organizations and international partners. Therfore, SciLifeLab is}  a great place to learn about the science and technology of life sciences, and to learn about the challenges of life sciences research.
+		
+		We are committed to providing a safe, safe and secure environment for all our scientists. We are committed to providing a safe, safe and secure environment for all our patients. We are committed to providing a safe, safe and secure environment for all our scientists. We are committed to
+	\end{alertblock}
+	
+	\remark{More context does not straightforwardly increase output quality}
 \end{frame}
 
 
