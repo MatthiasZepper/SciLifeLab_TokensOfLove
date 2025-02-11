@@ -57,7 +57,7 @@
 		\end{figure}
 		\column{0.8\textwidth}
 		\begin{itemize}
-			\item One-click automated data analysis
+			\item One-click automated data analysis and LLM-guided interpretation
 			\item AI pipeline developer \& QC report interpreter
 			\item Synthetic DNA generation for strains or antibody optimization. 
 		\end{itemize}
@@ -92,7 +92,7 @@
 	Explore, how pivotal they could become for our profession and in our organization. {\color{scAqua} \emph{Based on the information provided}} we’ll begin with the fundamentals of LLMs, cover some major applications and lastly address their suitability for real-world use cases at the NGI.
 	\par Looking forward to a lively exchange of ideas.
 	\par Best,\linebreak
-	$\left[Your Name\right]$
+	{\color{scAqua} \emph{$\left[Your Name\right]$}}
 	
 	\credit{*actually not AI-generated, because ChatGPT is a poor impersonator of its earlier versions}
 \end{frame}
@@ -179,7 +179,7 @@
 
 % % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
 
-\section{How do generative AI models (particularly LLMs) work?}
+\section{Primer on Language Models}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
@@ -189,7 +189,7 @@
 		\begin{exampleblock}{A language model}
 			assigns a probability for a sequence of words
 			$$
-			P(w_1, \cdots. w_{n})
+			P(w_1, \cdots, w_{n})
 			$$
 		\end{exampleblock}
 		\textbf{Examples:}
@@ -200,47 +200,46 @@
 			\end{itemize}
 \end{frame}
 
-\begin{frame}{Analogy of the model training process: Regression}
-	\begin{columns}[T,onlytextwidth]
-		\hspace*{-0.7cm} 
-		\column{0.5\textwidth}
-		\begin{itemize}
-			\item The model's formula corresponds to the \feature{architecture} of a LLM:
-			\begin{description}
-				\item[Exponential:] $y=ae^{bx}$
-				\item[Quadratic:] $y=ax^2 + bx + c$
-				\item[Sinusoidal:] $y=a sin(bx)$
-			\end{description}
-			\item During training, the model's \feature{parameters} ($a$,$b$,$c$) are optimized.
-		\end{itemize}
-		\remark{A real LLM architecture is very different from these simple examples and has billions of parameters.}
-		\column{0.5\textwidth}	
-		\begin{figure}
-			\includegraphics[width=\textwidth]{figures/NonlinearRegression.png}
-			\caption{Example of a "training" a model}
-		\end{figure}
-		
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Neural net language models}
+\begin{frame}{Training a model (Machine learning)}
 	\metroset{block=fill}
-	\begin{exampleblock}{Training phase (Machine learning)}
+	\begin{exampleblock}{Neural net language models}
 		\begin{itemize}
-		\item have flexible \feature{parameters} and are optimized  () by \feature{backpropagation}.
-		\item learn to predict next word in the sequence based on the \feature{context}.
+			\item have flexible \feature{parameters} and are optimized  by \feature{backpropagation}.
+			\item learn to predict next word in the sequence based on the \feature{context}.
 			$$
 			P(w_{i}|{\mathrm  {context}})
 			$$
-			\end{itemize}
+		\end{itemize}
 	\end{exampleblock}
-		\textbf{Curated training data collects known or desired outcomes:}
-\begin{itemize}
-	\item $\uparrow \uparrow \uparrow$ SciLifeLab is a national resource of unique technologies and expertise available to life scientists.
-	\item $\downarrow$ SciLifeLab is a burger restaurant next to Odenplan.
-\end{itemize}
+	\textbf{Curated training data collects known or desired outcomes:}
+	\begin{itemize}
+		\item $\uparrow \uparrow \uparrow$ SciLifeLab is a national resource of unique technologies and expertise available to life scientists.
+		\item $\downarrow$ SciLifeLab is a burger restaurant next to Odenplan.
+	\end{itemize}
 \end{frame}
 
+\begin{frame}{Analogy of the model training process: Regression}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.5\textwidth}	
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/NonlinearRegression.png}
+			\caption{Optimizing parameters, until the underlying data is captured well}
+		\end{figure}
+		\column{0.5\textwidth}
+		\vspace{1cm}
+		\begin{itemize}
+			\item The model's formula corresponds to the \feature{architecture} of a LLM:\linebreak
+			\begin{description}
+				\item[Exponential:] $y=a\, e^{bx}$
+				\item[Quadratic:] $y=a x^2 + bx + c$
+				\item[Sinusoidal:] $y=a\,sin(bx)$
+			\end{description}
+			\item During training, the model's \feature{parameters} ($a$,$b$,$c$) are optimized.
+		\end{itemize}
+	\end{columns}
+	\remark{Real LM architectures are different and nowadays have billions of parameters}
+\end{frame}
 
 \begin{frame}{Generative language models}
 	\metroset{block=fill}
@@ -256,7 +255,7 @@
 		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word}...
 		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word} \emph{word}...
 	\end{enumerate}
-\remark{Other natural language processing tasks include, e.g. classification, summarization, translation}
+\remark{Further Natural Language Processing tasks: classification, summarization, translation}
 \end{frame}
 
 
@@ -274,16 +273,19 @@
 	\remark{The model has access to more context than given by the prompt!}
 \end{frame}
 
-\begin{frame}{Text generation with more context from SciLifeLab website}
-	
-	\begin{alertblock}{GPT-2 (2019) }
-		\small
-		\textbf{SciLifeLab is a national resource of unique technologies and expertise available to life scientists, closely intertwined with our community of researchers in areas such as biomedicine, ecology and evolution. We bring scientists together across traditional boundaries and foster collaborations with industry, health care, public research organizations and international partners. Therfore, SciLifeLab is}  a great place to learn about the science and technology of life sciences, and to learn about the challenges of life sciences research.
-		
-		We are committed to providing a safe, safe and secure environment for all our scientists. We are committed to providing a safe, safe and secure environment for all our patients. We are committed to providing a safe, safe and secure environment for all our scientists.
-	\end{alertblock}
-	
-	\remark{More context does not straightforwardly increase output quality}
+
+\begin{frame}{A LLM web application is more than just the model}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{figures/OpenAIChatUI.png}
+		\caption{Main user interface for ChatGPT from OpenAI}
+	\end{figure}
+		\begin{itemize}
+			\item The user prompt is appended to invisible system prompts.
+			\item Different models / instances may be used in the background (\feature{agents}).
+			\item Additional context (\feature{RAG: retrieval-augmented generation}).
+			\item Queries to services or databases (\feature{MCP: model context protocol}).
+		\end{itemize}
+	\credit{https://chat.openai.com}
 \end{frame}
 
 
@@ -322,6 +324,21 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 \appendix
+
+\section{Appendix and supplementary slides}
+
+\begin{frame}{GPT-2 text generation with more context from SciLifeLab website}
+	
+	\begin{alertblock}{GPT-2 (2019) }
+		\small
+		\textbf{SciLifeLab is a national resource of unique technologies and expertise available to life scientists, closely intertwined with our community of researchers in areas such as biomedicine, ecology and evolution. We bring scientists together across traditional boundaries and foster collaborations with industry, health care, public research organizations and international partners. Therfore, SciLifeLab is}  a great place to learn about the science and technology of life sciences, and to learn about the challenges of life sciences research.
+		
+		We are committed to providing a safe, safe and secure environment for all our scientists. We are committed to providing a safe, safe and secure environment for all our patients. We are committed to providing a safe, safe and secure environment for all our scientists.
+	\end{alertblock}
+	\remark{More context does not straightforwardly increase output quality}
+\end{frame}
+
+
 \section{References}
 \begin{frame}[allowframebreaks]{References}
 \begingroup
