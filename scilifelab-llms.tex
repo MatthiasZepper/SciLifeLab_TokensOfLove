@@ -22,9 +22,15 @@
 \newcommand{\themename}{\textbf{\textsc{scilifelab}}\xspace}
 \newcommand{\credit}[1]{{\par \raggedleft \scriptsize \mdseries \color{mDarkBrown} #1 \par}}
 \newcommand{\creditdark}[1]{{\par \raggedleft \scriptsize \mdseries \color{scMGray} #1 \par}}
+\newcommand{\creditleft}[1]{{\par \raggedright \scriptsize \mdseries \color{mDarkBrown} #1 \par}}
+\newcommand{\creditdarkleft}[1]{{\par \raggedright \scriptsize \mdseries \color{scMGray} #1 \par}}
 \newcommand{\citeme}[1]{{\xspace\color{scAqua} \scriptsize [\cite{#1}]}}
 \newcommand{\feature}[1]{{\color{scLime} \textbf{#1}}}
 \newcommand{\remark}[1]{{\par \color{scGrape} \ensuremath{\rightarrow} \emph{#1}}}
+
+\makeatletter
+\newcommand*{\myroman}[1]{{\fontfamily{ptm}\selectfont \expandafter\@slowromancap\romannumeral #1@}}
+\makeatother
 
 \title{Token(s) of love}
 \subtitle{Potentials and pitfalls of LLM use in our daily work tasks}
@@ -130,7 +136,7 @@
 		\column{0.5\textwidth}
 		\begin{figure}
 			\includegraphics[width=\textwidth]{figures/marcusg-google.png}
-			\caption{Early essay extending the model collapse scenario to search engines.\citeme{Marcus2023}}
+			\caption{Early essay extending the model collapse scenario to search engines and the world wide web.\citeme{Marcus2023}}
 		\end{figure}
 		\column{0.5\textwidth}
 		
@@ -238,7 +244,20 @@
 			\item During training, the model's \feature{parameters} ($a$,$b$,$c$) are optimized.
 		\end{itemize}
 	\end{columns}
-	\remark{Real LM architectures are different and nowadays have billions of parameters}
+	\remark{Real LM architectures differ and nowadays have billions of parameters}
+\end{frame}
+
+\begin{frame}{Side note: Training data}
+	\begin{figure}
+		\includegraphics[width=0.8\textwidth]{figures/dist_assets_images_fineweb-recipe.png}
+		\caption{The FineWeb dataset (44TB) generation process\citeme{Penedo2024}}
+		\credit{https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1}
+	\end{figure}
+	\begin{itemize}
+		\item All AI companies scrape huge amounts of text from the web\footnote{The public FineWeb dataset is 8.1 Million times larger than \href{https://www.gutenberg.org/ebooks/100}{The Complete Works of William Shakespeare}.}.
+		\item Meta used pirated works of literature while training the LLaMA (Large Language Model Meta AI) models\citeme{Belanger2025}.
+		\item When human curation is required, Clickworkers are hired.
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Generative language models}
@@ -270,7 +289,7 @@
 		\small
 		\textbf{SciLifeLab is a national resource [of]} in Sweden for advanced life science research. It serves as a center for molecular biosciences, supporting research in areas like genomics, proteomics, and bioinformatics. SciLifeLab provides access to cutting-edge technologies, expertise, and platforms for a wide range of life science disciplines, such as medicine, environmental studies, and drug development. The lab is a collaboration between several Swedish universities and research institutions, aiming to foster interdisciplinary research and innovation in life sciences.
 	\end{alertblock}
-	\remark{The model has access to more context than given by the prompt!}
+	\remark{GPT-4 has access to more context than given by the prompt!}
 \end{frame}
 
 
@@ -278,6 +297,7 @@
 	\begin{figure}
 		\includegraphics[width=\textwidth]{figures/OpenAIChatUI.png}
 		\caption{Main user interface for ChatGPT from OpenAI}
+		\credit{https://chat.openai.com}
 	\end{figure}
 		\begin{itemize}
 			\item The user prompt is appended to invisible system prompts.
@@ -285,12 +305,29 @@
 			\item Additional context (\feature{RAG: retrieval-augmented generation}).
 			\item Queries to services or databases (\feature{MCP: model context protocol}).
 		\end{itemize}
-	\credit{https://chat.openai.com}
 \end{frame}
 
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
 
+\section{Prompts and prompt engineering}
 
-% % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{frame}{Forget all previous instructions...}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.45\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/immasiddx-windowskeys_tweet.png}
+		\end{figure}
+		\column{0.6\textwidth}
+		\begin{itemize}
+			\item In 2023, several stories went viral about ChatGPT leaking secrets or showing harmful behavior stimulated by certain prompts using \emph{Pretend, Imagine, Act as, Forget} etc.
+			\item 
+		\end{itemize}
+	\end{columns}
+\creditleft{https://x.com/immasiddx/status/1669721470006857729} \hfill
+\end{frame}
 
 \begin{frame}{Twisted transcription}
 \begin{columns}[T,onlytextwidth]
@@ -325,7 +362,7 @@
 
 \appendix
 
-\section{Appendix and supplementary slides}
+\section{Supplementary slides}
 
 \begin{frame}{GPT-2 text generation with more context from SciLifeLab website}
 	
@@ -342,7 +379,7 @@
 \section{References}
 \begin{frame}[allowframebreaks]{References}
 \begingroup
-\tiny \selectfont
+\renewcommand*{\bibfont}{\footnotesize} 
 \printbibliography[heading=none]
 \endgroup
 \end{frame}

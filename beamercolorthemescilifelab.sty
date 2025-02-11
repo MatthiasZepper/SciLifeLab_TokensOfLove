@@ -1,0 +1,186 @@
+%%
+%% This is file `beamercolorthemescilifelab.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% beamercolorthemescilifelab.dtx  (with options: `package')
+%% ---------------------------------------------------------------------------
+%% Copyright 2015 Matthias Vogelgesang and the LaTeX community. A full list of
+%% contributors can be found at
+%% 
+%%     https://github.com/matze/mtheme/graphs/contributors
+%% 
+%% and the original template was based on the HSRM theme by Benjamin Weiss.
+%% 
+%% This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+%% International License (https://creativecommons.org/licenses/by-sa/4.0/).
+%% ---------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamercolorthemescilifelab}[2017/01/23 scilifelab color theme]
+\RequirePackage{pgfopts}
+\pgfkeys{
+  /scilifelab/color/block/.cd,
+    .is choice,
+    transparent/.code=\scilifelab@block@transparent,
+    fill/.code=\scilifelab@block@fill,
+}
+\pgfkeys{
+  /scilifelab/color/background/.cd,
+    .is choice,
+    dark/.code=\scilifelab@colors@dark,
+    light/.code=\scilifelab@colors@light,
+}
+\newcommand{\scilifelab@color@setdefaults}{
+  \pgfkeys{/scilifelab/color/.cd,
+    background=light,
+    block=transparent,
+  }
+}
+\definecolor{scLime}{HTML}{a7c947}
+\definecolor{scTeal}{HTML}{045c64}
+\definecolor{scAqua}{HTML}{4c979f}
+\definecolor{scGrape}{HTML}{491f53}
+\definecolor{scLGray}{HTML}{e5e5e5}
+\definecolor{scMGray}{HTML}{a6a6a6}
+\definecolor{scDGray}{HTML}{3f3f3f}
+
+\definecolor{mDarkBrown}{HTML}{604c38}
+\definecolor{mDarkTeal}{HTML}{23373b}
+\definecolor{mLightBrown}{HTML}{EB811B}
+\definecolor{mLightGreen}{HTML}{14B03D}
+\newcommand{\scilifelab@colors@dark}{
+  \setbeamercolor{normal text}{%
+    fg=black!2,
+    bg=scGrape
+  }
+  \usebeamercolor[fg]{normal text}
+}
+\newcommand{\scilifelab@colors@light}{
+  \setbeamercolor{normal text}{%
+    fg=scDGray,
+    bg=white
+  }
+}
+
+\setbeamercolor{progress bar}{%
+  fg=scLime,
+  bg=scGrape
+}
+
+\setbeamercolor{alerted text}{%
+  fg=scLime
+}
+\setbeamercolor{example text}{%
+  fg=scTeal
+}
+
+\setbeamercolor{default block}{%
+  fg=scLime!75!black,
+  bg=scLime
+}
+\setbeamercolor{alerted block}{%
+  fg=scGrape!75!white,
+  bg=scGrape
+}
+\setbeamercolor{example block}{%
+  fg=scAqua,
+  bg=scTeal
+}
+\setbeamercolor{titlelike}{use=normal text, parent=normal text}
+\setbeamercolor{author}{use=normal text, parent=normal text}
+\setbeamercolor{date}{use=normal text, parent=normal text}
+\setbeamercolor{institute}{use=normal text, parent=normal text}
+\setbeamercolor{structure}{use=normal text, fg=normal text.fg}
+\setbeamercolor{palette primary}{%
+  use=normal text,
+  fg=normal text.bg,
+  bg=normal text.fg
+}
+\setbeamercolor{frametitle}{%
+  use=palette primary,
+  parent=palette primary
+}
+
+\setbeamercolor{title separator}{
+  use=progress bar,
+  parent=progress bar
+}
+\setbeamercolor{progress bar in head/foot}{%
+  use=progress bar,
+  parent=progress bar
+}
+\setbeamercolor{progress bar in section page}{
+  use=progress bar,
+  parent=progress bar
+}
+\newcommand{\scilifelab@block@transparent}{
+  \setbeamercolor{block title}{%
+    use=normal text,
+    fg=normal text.fg,
+    bg=
+  }
+  \setbeamercolor{block body}{
+    bg=
+  }
+
+  \setbeamercolor{block title alerted}{%
+  use={block title, alerted text},
+  bg=block title.bg,
+  fg=alerted text.fg
+}
+\setbeamercolor{block title example}{%
+  use={block title, example text},
+  bg=block title.bg,
+  fg=example text.fg
+}
+\setbeamercolor{block body alerted}{use=block body, parent=block body}
+\setbeamercolor{block body example}{use=block body, parent=block body}
+}
+
+\newcommand{\scilifelab@block@fill}{
+  \setbeamercolor{block title}{%
+    use=default block,
+    fg=default block.fg,
+    bg=default block.bg
+  }
+  \setbeamercolor{block body}{
+    use={default block},
+    bg=default block.bg,
+    fg=black!2
+  }
+
+\setbeamercolor{block title alerted}{%
+    use={alerted block},
+    bg=alerted block.bg,
+    fg=alerted block.fg
+}
+\setbeamercolor{block body alerted}{%
+    use={alerted block},
+    bg=alerted block.bg,
+    fg=black!2
+}
+\setbeamercolor{block title example}{%
+    use={example block},
+    bg=example block.bg,
+    fg=example block.fg
+}
+\setbeamercolor{block body example}{%
+    use={example block},
+    bg=example block.bg,
+    fg=black!2,
+}
+
+}
+\setbeamercolor{footnote}{fg=normal text.fg!90}
+\setbeamercolor{footnote mark}{fg=.}
+\setbeamercolor{bibliography entry author}{fg=, bg=}
+\setbeamercolor{bibliography entry title}{fg=, bg=}
+\setbeamercolor{bibliography entry location}{fg=, bg=}
+\setbeamercolor{bibliography entry note}{fg=, bg=}
+\scilifelab@color@setdefaults
+\ProcessPgfPackageOptions{/scilifelab/color}
+\mode<all>
+\endinput
+%%
+%% End of file `beamercolorthemescilifelab.sty'.
