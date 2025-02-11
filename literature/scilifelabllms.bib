@@ -263,4 +263,75 @@ Last month, Meta admitted to torrenting a controversial large dataset known as L
   url          = {https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1},
 }
 
+@Article{Bahdanau2014,
+  author        = {Bahdanau, Dzmitry and Cho, Kyunghyun and Bengio, Yoshua},
+  title         = {Neural Machine Translation by Jointly Learning to Align and Translate},
+  year          = {2014},
+  month         = sep,
+  abstract      = {Neural machine translation is a recently proposed approach to machine translation. Unlike the traditional statistical machine translation, the neural machine translation aims at building a single neural network that can be jointly tuned to maximize the translation performance. The models proposed recently for neural machine translation often belong to a family of encoder-decoders and consists of an encoder that encodes a source sentence into a fixed-length vector from which a decoder generates a translation. In this paper, we conjecture that the use of a fixed-length vector is a bottleneck in improving the performance of this basic encoder-decoder architecture, and propose to extend this by allowing a model to automatically (soft-)search for parts of a source sentence that are relevant to predicting a target word, without having to form these parts as a hard segment explicitly. With this new approach, we achieve a translation performance comparable to the existing state-of-the-art phrase-based system on the task of English-to-French translation. Furthermore, qualitative analysis reveals that the (soft-)alignments found by the model agree well with our intuition.},
+  archiveprefix = {arXiv},
+  copyright     = {arXiv.org perpetual, non-exclusive license},
+  doi           = {10.48550/ARXIV.1409.0473},
+  eprint        = {1409.0473},
+  file          = {:Bahdanau2014 - Neural Machine Translation by Jointly Learning to Align and Translate.pdf:PDF:http\://arxiv.org/pdf/1409.0473v7},
+  keywords      = {Computation and Language (cs.CL), Machine Learning (cs.LG), Neural and Evolutionary Computing (cs.NE), Machine Learning (stat.ML), FOS: Computer and information sciences},
+  primaryclass  = {cs.CL},
+  publisher     = {arXiv},
+}
+
+@Misc{Alammar2018,
+  author       = {Jay Alammar},
+  howpublished = {Blog post},
+  month        = jun,
+  title        = {The Illustrated Transformer},
+  year         = {2018},
+  url          = {http://jalammar.github.io/illustrated-transformer/},
+}
+
+@Article{Borgeaud2021,
+  author        = {Borgeaud, Sebastian and Mensch, Arthur and Hoffmann, Jordan and Cai, Trevor and Rutherford, Eliza and Millican, Katie and Driessche, George van den and Lespiau, Jean-Baptiste and Damoc, Bogdan and Clark, Aidan and Casas, Diego de Las and Guy, Aurelia and Menick, Jacob and Ring, Roman and Hennigan, Tom and Huang, Saffron and Maggiore, Loren and Jones, Chris and Cassirer, Albin and Brock, Andy and Paganini, Michela and Irving, Geoffrey and Vinyals, Oriol and Osindero, Simon and Simonyan, Karen and Rae, Jack W. and Elsen, Erich and Sifre, Laurent},
+  title         = {Improving language models by retrieving from trillions of tokens},
+  year          = {2021},
+  month         = dec,
+  abstract      = {We enhance auto-regressive language models by conditioning on document chunks retrieved from a large corpus, based on local similarity with preceding tokens. With a $2$ trillion token database, our Retrieval-Enhanced Transformer (RETRO) obtains comparable performance to GPT-3 and Jurassic-1 on the Pile, despite using 25$\times$ fewer parameters. After fine-tuning, RETRO performance translates to downstream knowledge-intensive tasks such as question answering. RETRO combines a frozen Bert retriever, a differentiable encoder and a chunked cross-attention mechanism to predict tokens based on an order of magnitude more data than what is typically consumed during training. We typically train RETRO from scratch, yet can also rapidly RETROfit pre-trained transformers with retrieval and still achieve good performance. Our work opens up new avenues for improving language models through explicit memory at unprecedented scale.},
+  archiveprefix = {arXiv},
+  copyright     = {Creative Commons Attribution 4.0 International},
+  doi           = {10.48550/ARXIV.2112.04426},
+  eprint        = {2112.04426},
+  file          = {:Borgeaud2021 - Improving Language Models by Retrieving from Trillions of Tokens.pdf:PDF:http\://arxiv.org/pdf/2112.04426v3},
+  keywords      = {Computation and Language (cs.CL), Machine Learning (cs.LG), FOS: Computer and information sciences},
+  primaryclass  = {cs.CL},
+  publisher     = {arXiv},
+}
+
+@Misc{,
+  author       = {Jay Alammar},
+  howpublished = {Blog post},
+  month        = jan,
+  title        = {The Illustrated Retrieval Transformer},
+  year         = {2022},
+  abstract     = {The latest batch of language models can be much smaller yet achieve GPT-3 like performance by being able to query a database or search the web for information. A key indication is that building larger and larger models is not the only way to improve performance.},
+  url          = {https://jalammar.github.io/illustrated-retrieval-transformer/},
+}
+
+@Misc{,
+  author   = {Pandu Nayak},
+  month    = oct,
+  title    = {Understanding searches better than ever before},
+  year     = {2019},
+  abstract = {Applying BERT models to Search
+Last year, we introduced and open-sourced a neural network-based technique for natural language processing (NLP) pre-training called Bidirectional Encoder Representations from Transformers, or as we call it--BERT, for short. This technology enables anyone to train their own state-of-the-art question answering system.},
+  url      = {https://blog.google/products/search/search-language-understanding-bert/},
+}
+
+@Misc{,
+  author       = {Jeffrey Zhu},
+  howpublished = {Microsoft Azure Blog},
+  month        = nov,
+  title        = {Bing delivers its largest improvement in search experience using Azure GPUs},
+  year         = {2019},
+  abstract     = {Recently, there was a breakthrough in natural language understanding with a type of model called transformers (as popularized by Bidirectional Encoder Representations from Transformers, BERT). Unlike previous deep neural network (DNN) architectures that processed words individually in order, transformers understand the context and relationship between each word and all the words around it in a sentence. Starting from April of this year, we used large transformer models to deliver the largest quality improvements to our Bing customers in the past year. For example, in the query “what can aggravate a concussion”, the word “aggravate” indicates the user wants to learn about actions to be taken after a concussion and not about causes or symptoms. Our search powered by these models can now understand the user intent and deliver a more useful result. More importantly, these models are now applied to every Bing search query globally making Bing results more relevant and intelligent.},
+  url          = {https://azure.microsoft.com/en-us/blog/bing-delivers-its-largest-improvement-in-search-experience-using-azure-gpus/},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
