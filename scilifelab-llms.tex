@@ -286,11 +286,17 @@
 \begin{itemize}
 	\item Tokens allow for an efficient representation of language.
 	\item There is no \emph{Lingua franca}, many models have their own \feature{tokenizer}. 
-	 \par \remark{GPT-3 works with 50257 distinct tokens}
+	\item Natural language exhibits patterns\citeme{Li1992,Piantadosi2014}
+	\item Tokens are devised by 
+			\begin{itemize}
+			\item Iteratively merging frequent character pairs (\href{https://sebastianraschka.com/blog/2025/bpe-from-scratch.html}{Byte-pair encoding}).
+			\item Pruning subwords based on probability (\href{https://medium.com/mti-technology/n-gram-language-model-b7c2fc322799}{Unigram LM}, \href{https://github.com/google/sentencepiece}{SentencePiece})
+		\end{itemize}
+	 \vspace{0.2cm} \par \remark{GPT-3 works with 50257 distinct tokens}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Tokens - the atoms of language models}
+\begin{frame}{Using letters instead of tokens would result in too long sequences!}
 	\begin{columns}[T,onlytextwidth]
 		\hspace*{-0.7cm} 
 		\column{0.6\textwidth} 
@@ -299,14 +305,25 @@
 		\end{figure}
 		\creditleft{https://tiktokenizer.vercel.app} \hfill
 		\column{0.5\textwidth}
-		\vspace{1cm}
+		\vspace{0.7cm}
 		\begin{itemize}
 			\item For English language texts, many words correspond to whole tokens. 
-			\item For other languages (including fictional ones), words must be split.
-			 \item If you are building with APIs, token count is used for billing: \par
+			\item For other languages (including fictional ones), words are split.
+			 \item If you are building with APIs, token count is used for billing: \vspace{0.2cm} \par
 			 \includegraphics[height=0.3\textheight]{figures/PricingExampleOpenAIGPt4o.png}
 		\end{itemize}
 	\end{columns}
+\end{frame}
+
+\begin{frame}{Embedding: Representing tokens mathematically}
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{figures/OneDoesNotSimply.jpg}
+	\end{figure}
+		\begin{itemize}
+			\item For English language texts, many words correspond to whole tokens. 
+			\item For other languages (including fictional ones), words must be split.
+			\item If you are building with APIs, token count is used for billing:
+		\end{itemize}
 \end{frame}
 
 \begin{frame}{Large training datasets are required}
