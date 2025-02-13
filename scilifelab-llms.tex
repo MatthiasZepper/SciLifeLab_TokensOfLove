@@ -303,16 +303,16 @@
 		\begin{figure}
 			\includegraphics[width=\textwidth]{figures/TikTokenizer.png}
 		\end{figure}
-		\creditleft{https://tiktokenizer.vercel.app} \hfill
 		\column{0.5\textwidth}
 		\vspace{0.7cm}
 		\begin{itemize}
 			\item For English language texts, many words correspond to whole tokens. 
-			\item For other languages (including fictional ones), words are split.
+			\item Logographic languages e.g. Chinese are morphemes (tokens).
 			 \item If you are building with APIs, token count is used for billing: \vspace{0.2cm} \par
 			 \includegraphics[height=0.3\textheight]{figures/PricingExampleOpenAIGPt4o.png}
 		\end{itemize}
 	\end{columns}
+		\creditleft{https://tiktokenizer.vercel.app;  https://github.com/openai/tiktoken}
 \end{frame}
 
 \begin{frame}{Embedding: Representing tokens mathematically}
@@ -320,10 +320,46 @@
 		\includegraphics[width=0.6\textwidth]{figures/OneDoesNotSimply.jpg}
 	\end{figure}
 		\begin{itemize}
-			\item For English language texts, many words correspond to whole tokens. 
-			\item For other languages (including fictional ones), words must be split.
-			\item If you are building with APIs, token count is used for billing:
+			\item For computation, tokens must be represented mathematically.
+			\item This representation must be malleable:
+			 \begin{itemize}
+				\item \feature{Polysemy} (Multiple meanings): model (math, toy, fashion)
+				\item \feature{Homonyms} (Different meanings): lead (metal, to guide)
+			\end{itemize}
+			\item Commonly high-dimensional vectors: $\mathbf{v} =
+			\begin{bmatrix}
+				v_1 & v_2 & v_3 & \dots & v_d
+			\end{bmatrix}$
 		\end{itemize}
+		 \vspace{0.2cm} \par \remark{GPT-3 works with 12288-dimensional vector representation}
+\end{frame}
+
+\begin{frame}{Embedding tokens as high-dimensional vectors}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.55\textwidth} 
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/3D_word_to_vec.png}
+			$$
+			\mathbf{v} =
+			\begin{bmatrix}
+				v_1 \\
+				v_2 \\
+				v_3 \\
+				\vdots \\
+				v_d
+			\end{bmatrix}
+			$$
+		\end{figure}
+		\column{0.55\textwidth}
+		\vspace{0.7cm}
+		\begin{itemize}
+			\item Tokens from vocabulary are mapped to vectors while capturing relationships. 
+			\item The embedding algorithms are often small, pre-trained language models (Word2Vec, Glove, ELMo, BERT)
+			\item In BERT, the embeddings are the sum of the token, segmentation and the position: \vspace{0.2cm} \par
+			\includegraphics[height=0.3\textheight]{figures/Devlin2018 _BERTfig2.png}
+		\end{itemize}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Large training datasets are required}
@@ -402,7 +438,7 @@
 		\column{0.6\textwidth}
 		\begin{itemize}
 			\item In 2023, several stories went viral about ChatGPT leaking secrets or showing harmful behavior stimulated by certain prompts using \emph{Pretend, Imagine, Act as, Forget} etc.
-			\item 
+			\item Superstition: Better output with more friendly prompts
 		\end{itemize}
 	\end{columns}
 \creditleft{https://x.com/immasiddx/status/1669721470006857729} \hfill
