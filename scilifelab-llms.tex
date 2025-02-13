@@ -33,10 +33,10 @@
 \makeatother
 
 \title{Token(s) of love}
-\subtitle{Potentials and pitfalls of LLM use in our daily work tasks}
+\subtitle{Potentials and pitfalls of using Large Language Models}
 \date{February 14, 2025}
 \author{Matthias Zepper, PhD}
-\institute{NGI Stockholm, Genomic Focus Meeting}
+\institute{NGI Stockholm, Genomic Focus Meeting \par \href{https://github.com/MatthiasZepper/SciLifeLab_TokensOfLove}{https://github.com/MatthiasZepper/SciLifeLab\_TokensOfLove}}
 \titlegraphic{\hfill\includegraphics[height=1cm]{./additional_graphics/SciLifeLab_Logotype_Green_POS.png}}
 
 \begin{document}
@@ -202,7 +202,7 @@
 			\begin{itemize}
 				\item SciLifeLab is a national resource of unique technologies and expertise available to life scientists.
 				\item SciLifeLab is a burger restaurant next to Odenplan.
-				\item Paroo vajolette esfi SciLifeLab snorzi palque Quatbazz hos ump.
+				\item Paro vajolette esfi SciLifeLab snorzi palque Quation hos ump.
 			\end{itemize}
 \end{frame}
 
@@ -262,8 +262,51 @@
 	\end{center}
 \end{frame}
 
-\begin{frame}{Natural Language Processing is complicated}
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
 
+\section{Architectures and key innovations}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+\begin{frame}{Tokens - the atoms of language models}
+	\begin{center}
+		\emph{\large \bfseries Paro vajolette esfi SciLifeLab\linebreak snorzi palque Quation hos ump.}
+	\end{center}
+  \remark{No real words, but it could be an unknown Indo-European language!}
+\end{frame}
+
+\begin{frame}{Tokens - the atoms of language models}
+	\metroset{block=fill}
+\begin{exampleblock}{Revised LM definition}
+	A language model assigns a probability for a sequence of \feature{tokens}
+	$$
+	P(t_1, \cdots, t_{n})
+	$$
+\end{exampleblock}
+\begin{itemize}
+	\item Tokens allow for an efficient representation of language.
+	\item There is no \emph{Lingua franca}, many models have their own \feature{tokenizer}. 
+	 \par \remark{GPT-3 works with 50257 distinct tokens}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tokens - the atoms of language models}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.6\textwidth} 
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/TikTokenizer.png}
+		\end{figure}
+		\creditleft{https://tiktokenizer.vercel.app} \hfill
+		\column{0.5\textwidth}
+		\vspace{1cm}
+		\begin{itemize}
+			\item For English language texts, many words correspond to whole tokens. 
+			\item For other languages (including fictional ones), words must be split.
+			 \item If you are building with APIs, token count is used for billing: \par
+			 \includegraphics[height=0.3\textheight]{figures/PricingExampleOpenAIGPt4o.png}
+		\end{itemize}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Large training datasets are required}
