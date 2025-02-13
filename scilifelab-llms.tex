@@ -413,7 +413,7 @@
 			\item \feature{Self-Attention block}: Vectors pass information back and forth.
 			\item \feature{Feed-forward neural network}: Vectors are processed in isolation.
 		\end{itemize}
-	\item Transformers were popularized by the paper\emph{Attention is all you need}\citeme{Vaswani2017}.
+	\item Transformers were popularized by the paper \emph{Attention is all you need}\citeme{Vaswani2017}.
 	\end{itemize}
 \end{frame}
 
@@ -427,7 +427,7 @@
 		\column{0.7\textwidth}
 		\vspace{1cm}
 		\begin{itemize}
-			\item Transformer models have made previous NLP models like LSTM\citeme{Hochreiter1997} obsolete.
+			\item Transformer models have made previous NLP architectures like LSTM\citeme{Hochreiter1997} obsolete.
 			\item Also models from other domains like DALL-E or Whisper use the transformer architecture.
 			\item Plenty of matrix multiplications, for which graphic cards with many tensor cores are needed.
 		\end{itemize}	
@@ -459,10 +459,9 @@
 	\metroset{block=fill}
 	\begin{exampleblock}{Inference}
 		\begin{itemize}
-			\item is the process of using a \feature{pre-trained} model (fixed \feature{parameters}) and adding one or multiple words to the context.
+			\item is the process of using a \feature{pre-trained} model to predict the most probable next token step by step.
 		\end{itemize}
 	\end{exampleblock}
-	\textbf{Repeated cycles of adding to the \feature{context window}}
 	\begin{enumerate}
 		\item SciLifeLab is a national resource of...
 		\item SciLifeLab is a national resource of \emph{word} \emph{word} ...
@@ -471,8 +470,7 @@
 	\end{enumerate}
 \end{frame}
 
-
-\begin{frame}{Text generation with no context}
+\begin{frame}{Text generation with virtually no context}
 		
 	\begin{alertblock}{GPT-2 (2019) }
 		\small
@@ -501,6 +499,18 @@
 		\end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Inference can be run locally for better privacy}
+	\begin{figure}
+		\includegraphics[width=0.4\textwidth]{figures/Ollama.png}
+	\end{figure}
+	\begin{itemize}
+		\item \href{https://ollama.com}{Ollama} (command line) can be used to run inference locally.
+		\item \href{https://jan.ai}{Jan.ai} (stand-alone)), \href{https://claude.ai/download}{Claude for desktop} or \href{https://block.github.io/goose}{Goose} (GUI to Ollama) offer graphical user interfaces.
+		\item For developers: \href{https://github.com/agno-agi/agno}{Agno}, \href{https://github.com/sgl-project/sglang}{SGlang}, \href{https://haystack.deepset.ai/}{Haystack}, \href{https://github.com/langgenius/dify}{Dify}, \href{https://crates.io/crates/kalosm}{Kalosm}, \href{https://github.com/atoma-network/atoma-infer}{Atoma} \dots
+		\item \href{https://github.com/evilsocket/cake}{Cake} can split interference, e.g. using clusters of older hardware.
+	\end{itemize}
+\end{frame}
+
 % % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
 
 \section{Prompts and prompt engineering}
@@ -512,18 +522,18 @@
 		\hspace*{-0.7cm} 
 		\column{0.45\textwidth}
 		\begin{figure}
-			\includegraphics[width=\textwidth]{figures/immasiddx-windowskeys_tweet.png}
+			\includegraphics[width=\textwidth]{figures/forbes_friendlyprompts.png}
 		\end{figure}
 		\column{0.6\textwidth}
+		\vspace{1cm}
 		\begin{itemize}
-			\item In 2023, several stories went viral about ChatGPT leaking secrets or showing harmful behavior stimulated by certain prompts using \emph{Pretend, Imagine, Act as, Forget} etc.
-			\item Superstition: Better output with more friendly prompts
+			\item In 2023, several stories went viral \href{https://x.com/immasiddx/status/1669721470006857729}{about ChatGPT leaking secrets} or showing harmful behavior stimulated by certain prompts using \emph{Pretend, Imagine, Act as, Forget} etc.
+			\item Superstition: Better output with more friendly prompts, in reality only verbosity changes\citeme{Marr2024}. 
+			\item \href{https://docs.cohere.com/docs/crafting-effective-prompts}{Particular keywords or structures make prompts more effective}.
 		\end{itemize}
 	\end{columns}
-\creditleft{https://x.com/immasiddx/status/1669721470006857729} \hfill
+\creditleft{} \hfill
 \end{frame}
-
-
 
 % % % % % % % % % % % % % % % % % 
 
@@ -533,7 +543,7 @@
 
 \appendix
 
-\section{Recommended ressources}
+\section{Recommended resources}
 
 \begin{frame}{More Information on Transformers}
 	\begin{block}{\href{https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi}{3Blue1Brown} course on neural networks\citeme{Sanderson2024}}
