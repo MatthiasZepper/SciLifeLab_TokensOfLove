@@ -247,16 +247,35 @@
 	\remark{Real LM architectures differ and nowadays have billions of parameters}
 \end{frame}
 
-\begin{frame}{Side note: Training data}
+\begin{frame}[standout]{Natural Language Processing is complicated}
+	\begin{center}
+			\emph{I saw a woman on a hill with a telescope}
+	\end{center}
+\end{frame}
+
+\begin{frame}[standout]{Natural Language Processing is complicated}
+	\begin{center}
+		\emph{What would be the scientists' reception accorded the board's introduction of additional means of funding?}
+		\vspace{2cm}\par
+		% Difficult, even without nominalizations: Is it about the mood of the scientists or about the application process?
+		\emph{How would scientists receive the new funds being introduced by the board?}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Natural Language Processing is complicated}
+
+\end{frame}
+
+\begin{frame}{Large training datasets are required}
 	\begin{figure}
-		\includegraphics[width=0.8\textwidth]{figures/dist_assets_images_fineweb-recipe.png}
+		\includegraphics[width=0.7\textwidth]{figures/dist_assets_images_fineweb-recipe.png}
 		\caption{The FineWeb dataset (44TB) generation process\citeme{Penedo2024}}
 		\credit{https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1}
 	\end{figure}
 	\begin{itemize}
 		\item All AI companies scrape huge amounts of text from the web\footnote{The public FineWeb dataset is 8.1 Million times larger than \href{https://www.gutenberg.org/ebooks/100}{The Complete Works of William Shakespeare}.}.
 		\item Meta used pirated works of literature while training the LLaMA (Large Language Model Meta AI) models\citeme{Belanger2025}.
-		\item When human curation is required, Clickworkers are hired.
+		\item When human curation is required, Clickworkers are hired.\par
 	\end{itemize}
 \end{frame}
 
