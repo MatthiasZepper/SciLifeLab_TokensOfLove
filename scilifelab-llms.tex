@@ -307,7 +307,7 @@
 		\vspace{0.7cm}
 		\begin{itemize}
 			\item For English language texts, many words correspond to whole tokens. 
-			\item Logographic languages e.g. Chinese are morphemes (tokens).
+			\item Logographic languages, e.g. Chinese, use morpheme characters (virtually tokens).
 			 \item If you are building with APIs, token count is used for billing: \vspace{0.2cm} \par
 			 \includegraphics[height=0.3\textheight]{figures/PricingExampleOpenAIGPt4o.png}
 		\end{itemize}
@@ -340,40 +340,87 @@
 		\column{0.55\textwidth} 
 		\begin{figure}
 			\includegraphics[width=\textwidth]{figures/3D_word_to_vec.png}
-			$$
-			\mathbf{v} =
-			\begin{bmatrix}
-				v_1 \\
-				v_2 \\
-				v_3 \\
-				\vdots \\
-				v_d
-			\end{bmatrix}
-			$$
 		\end{figure}
 		\column{0.55\textwidth}
 		\vspace{0.7cm}
 		\begin{itemize}
-			\item Tokens from vocabulary are mapped to vectors while capturing relationships. 
+			\item Tokens from vocabulary are mapped to vectors while capturing semantic meaning. 
 			\item The embedding algorithms are often small, pre-trained language models (Word2Vec, Glove, ELMo, BERT)
-			\item In BERT, the embeddings are the sum of the token, segmentation and the position: \vspace{0.2cm} \par
-			\includegraphics[height=0.3\textheight]{figures/Devlin2018 _BERTfig2.png}
+			\item In BERT, the dense embeddings are the sum of the token, segmentation and position\citeme{Devlin2018} \vspace{0.4cm}:
+			% BERT is trained on tasks that require understanding relations between two sentences (e.g., "Is sentence B a continuation of sentence A?"). To achieve this, BERT processes two sentences simultaneously and needs a way to differentiate them, using the special token [SEP].  Segment Embeddings are used e.g. in sentence-pair classification (e.g., Next Sentence Prediction, Natural Language Inference), Question Answering (e.g., SQuAD, where the passage and question are separate segments), and text Similarity Tasks (e.g., "Do these two sentences mean the same thing?"). However, for single-sentence tasks, all segment embeddings are just set to 0.
 		\end{itemize}
 	\end{columns}
+	\begin{columns}[T,onlytextwidth]
+	\hspace*{-0.7cm} 
+	\column{0.25\textwidth} 
+	\vspace{-0.4cm}
+		$$
+		\mathbf{v} =
+		\begin{bmatrix}
+			v_1 \\
+			v_2 \\
+			v_3 \\
+			\vdots \\
+			v_d
+		\end{bmatrix}
+		$$
+	\column{0.75\textwidth}
+		\includegraphics[height=0.3\textheight]{figures/Devlin2018 _BERTfig2.png}
+\end{columns}
+\end{frame}
+
+\begin{frame}{BERT and its (his?) friends}
+		Pretrained BERT models are the basis of many fine-tuned task-specific models%\citeme{sun2019finetune}:
+		\begin{itemize}
+			\item Interpretation of Google and Bing search engine prompts since 2019%\citeme{Zhu2019}
+			\item DNABERT to generate functional, e.g. cis-regulatory, DNA sequences%\citeme{Ji2021,Zhou2023}
+			\item Many more for classification, summarization, translation
+		\end{itemize}
+		\remark{BERT input is constrained to 512 tokens, GPT-3 uses 2048 token input}
+		\begin{columns}[T,onlytextwidth]
+			\column{0.3\textwidth}
+			\begin{figure}
+				\vspace{0.4cm}
+				\includegraphics[height=0.5\textheight]{figures/muppets-ernieandbert.jpg}
+			\end{figure}
+			\column{0.7\textwidth}
+			\begin{exampleblock}{BERT and friends}
+				\vspace{0.2cm}
+				\begin{itemize}
+					\item BART: bidirectional and auto-regressive transformers
+					\item BERT: bidirectional encoder representations from transfomers
+					\item GPT: generative pretrained transformer
+				\end{itemize}
+				\creditleft{by Jim Henson, Sesame Workshop}
+			\end{exampleblock}
+		\end{columns}
+\end{frame}
+
+\begin{frame}[standout]{Everyone loves \emph{Transformers}?}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{figures/Transformer_models.png}
+	\end{figure}
+			\creditdark{https://github.com/black-forest-labs/flux}
 \end{frame}
 
 \begin{frame}{Large training datasets are required}
 	\begin{figure}
 		\includegraphics[width=0.7\textwidth]{figures/dist_assets_images_fineweb-recipe.png}
 		\caption{The FineWeb dataset (44TB) generation process\citeme{Penedo2024}}
-		\credit{https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1}
 	\end{figure}
 	\begin{itemize}
-		\item All AI companies scrape huge amounts of text from the web\footnote{The public FineWeb dataset is 8.1 Million times larger than \href{https://www.gutenberg.org/ebooks/100}{The Complete Works of William Shakespeare}.}.
+		\item All AI companies scrape huge amounts of text from the web\footnote{\tiny The public FineWeb dataset is 8.1 Million times larger than \href{https://www.gutenberg.org/ebooks/100}{The Complete Works of William Shakespeare}.}.
 		\item Meta used pirated works of literature while training the LLaMA (Large Language Model Meta AI) models\citeme{Belanger2025}.
-		\item When human curation is required, Clickworkers are hired.\par
+		\item When human curation is required, Clickworkers are hired.
 	\end{itemize}
+	\credit{https://huggingface.co/spaces/HuggingFaceFW/blogpost-fineweb-v1\par \vspace{0.2cm} \hfill}
 \end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Generative models}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 \begin{frame}{Generative language models}
 	\metroset{block=fill}
@@ -389,7 +436,6 @@
 		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word}...
 		\item SciLifeLab is a national resource of \emph{word} \emph{word} \emph{word} \emph{word} \emph{word}...
 	\end{enumerate}
-\remark{Further Natural Language Processing tasks: classification, summarization, translation}
 \end{frame}
 
 
@@ -444,30 +490,7 @@
 \creditleft{https://x.com/immasiddx/status/1669721470006857729} \hfill
 \end{frame}
 
-\begin{frame}{Twisted transcription}
-\begin{columns}[T,onlytextwidth]
-	\column{0.5\textwidth}
-	
-	\begin{alertblock}{Twintron}
-		\begin{itemize}
-			\item Introns-within-introns excised by sequential splicing reactions. 
-			\item First described in Euglena gracilis chloroplast
-			\item Also kown in cryptomonad algae and fungal mitochondrial genomes.
-		\end{itemize}
-	\end{alertblock}
 
-	\column{0.5\textwidth}
-		
-	\begin{alertblock}{Exitrons}
-		\begin{itemize}
-			\item BART: bidirectional and auto regressive transformers
-			\item BERT: bidirectional encoder representations from transfomers
-			\item GPT: generative pretrained transformer
-		\end{itemize}
-
-	\end{alertblock}
-\end{columns}
-\end{frame}
 
 % % % % % % % % % % % % % % % % % 
 
