@@ -369,12 +369,11 @@
 \end{columns}
 \end{frame}
 
-\begin{frame}{BERT and its (his?) friends}
-		Pretrained BERT models are the basis of many fine-tuned task-specific models%\citeme{sun2019finetune}:
+\begin{frame}{BERT and related models}
+		Pretrained BERT model is the basis of many fine-tuned, task-specific models for classification, summarization, translation\citeme{sun2019finetune}:
 		\begin{itemize}
-			\item Interpretation of Google and Bing search engine prompts since 2019%\citeme{Zhu2019}
-			\item DNABERT to generate functional, e.g. cis-regulatory, DNA sequences%\citeme{Ji2021,Zhou2023}
-			\item Many more for classification, summarization, translation
+			\item Interpretation of Google and Bing search engine prompts since 2019\citeme{Nayak2019,Zhu2019}.
+			\item DNABERT to generate functional, e.g. cis-regulatory, DNA sequences\citeme{Ji2021,Zhou2023}.
 		\end{itemize}
 		\remark{BERT input is constrained to 512 tokens, GPT-3 uses 2048 token input}
 		\begin{columns}[T,onlytextwidth]
@@ -398,9 +397,43 @@
 
 \begin{frame}[standout]{Everyone loves \emph{Transformers}?}
 	\begin{figure}
-		\includegraphics[width=\textwidth]{figures/Transformer_models.png}
+		\includegraphics[width=0.8\textwidth]{figures/Transformer_models.png}
 	\end{figure}
 			\creditdark{https://github.com/black-forest-labs/flux}
+\end{frame}
+
+\begin{frame}{Yeah, but the \emph{other} transformers}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{figures/Transformer_decoder.png}
+	\end{figure}
+	\credit{http://jalammar.github.io/illustrated-transformer \citeme{Alammar2018}}
+	\begin{itemize}
+		\item The Transformer architecture combines two components elegantly:
+		\begin{itemize}
+			\item \feature{Self-Attention block}: Vectors pass information back and forth.
+			\item \feature{Feed-forward neural network}: Vectors are processed in isolation.
+		\end{itemize}
+	\item Transformers were popularized by the paper\emph{Attention is all you need}\citeme{Vaswani2017}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Several transformers are stacked for a full model}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.35\textwidth} 
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/nanoGPT.png}
+		\end{figure}
+		\column{0.7\textwidth}
+		\vspace{1cm}
+		\begin{itemize}
+			\item Transformer models have made previous NLP models like LSTM\citeme{Hochreiter1997} obsolete.
+			\item Also models from other domains like DALL-E or Whisper use the transformer architecture.
+			\item Plenty of matrix multiplications, for which graphic cards with many tensor cores are needed.
+		\end{itemize}	
+		\vspace{1.5cm} \par
+		\creditleft{\citeme{Bycroft2023}, https://bbycroft.net/llm}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Large training datasets are required}
@@ -439,7 +472,7 @@
 \end{frame}
 
 
-\begin{frame}{Text generation with little context}
+\begin{frame}{Text generation with no context}
 		
 	\begin{alertblock}{GPT-2 (2019) }
 		\small
@@ -499,6 +532,24 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 \appendix
+
+\section{Recommended ressources}
+
+\begin{frame}{More Information on Transformers}
+	\begin{block}{\href{https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi}{3Blue1Brown} course on neural networks\citeme{Sanderson2024}}
+	\begin{itemize}
+		\item \href{https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=6}{Transformers}
+		\item \href{https://www.youtube.com/watch?v=eMlx5fFNoYc&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=7}{Attention in transformers}
+		\item \href{https://www.youtube.com/watch?v=9-Jl0dxWQs8&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=8}{How might LLMs store facts}
+	\end{itemize}
+\end{block}
+	\begin{block}{Other resources}
+	\begin{itemize}
+		\item \href{https://bbycroft.net/llm}{3D interactive models} of a GPT-style LLM networks running inference\citeme{Bycroft2023}
+		\item \href{http://jalammar.github.io/illustrated-transformer/}{The Illustrated Transformer}\citeme{Alammar2018}
+	\end{itemize}
+	\end{block}
+\end{frame}
 
 \section{Supplementary slides}
 

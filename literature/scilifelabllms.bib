@@ -57,15 +57,6 @@ Last month, Meta admitted to torrenting a controversial large dataset known as L
   year      = {1936},
 }
 
-@misc{vaswani2017attention,
-    title={Attention Is All You Need},
-    author={Ashish Vaswani and others},
-    year={2017},
-    eprint={1706.03762},
-    archivePrefix={arXiv},
-    primaryClass={cs.CL}
-}
-
 @misc{sun2019finetune,
     title={How to Fine-Tune BERT for Text Classification?},
     author={Chi Sun and others},
@@ -97,23 +88,6 @@ Last month, Meta admitted to torrenting a controversial large dataset known as L
     eprint={1909.08053},
     archivePrefix={arXiv},
     primaryClass={cs.CL}
-}
-
-@article{hochreiter1997long,
-  added-at = {2016-11-15T08:49:43.000+0100},
-  author = {Hochreiter, Sepp and others},
-  biburl = {https://www.bibsonomy.org/bibtex/2a4a80026d24955b267cae636aa8abe4a/dallmann},
-  interhash = {0692b471c4b9ae65d00affebc09fb467},
-  intrahash = {a4a80026d24955b267cae636aa8abe4a},
-  journal = {Neural computation},
-  keywords = {lstm rnn},
-  number = 8,
-  pages = {1735--1780},
-  publisher = {MIT Press},
-  timestamp = {2016-11-15T08:49:43.000+0100},
-  title = {Long short-term memory},
-  volume = 9,
-  year = 1997
 }
 
 @misc{wang2018glue,
@@ -412,7 +386,7 @@ Last year, we introduced and open-sourced a neural network-based technique for n
   month           = aug,
   pages           = {2112--2120},
   volume          = {37},
-  abstract        = {Deciphering the language of non-coding DNA is one of the fundamental problems in genome research. Gene regulatory code is highly complex due to the existence of polysemy and distant semantic relationship, which previous informatics methods often fail to capture especially in data-scarce scenarios. To address this challenge, we developed a novel pre-trained bidirectional encoder representation, named DNABERT, to capture global and transferrable understanding of genomic DNA sequences based on up and downstream nucleotide contexts. We compared DNABERT to the most widely used programs for genome-wide regulatory elements prediction and demonstrate its ease of use, accuracy and efficiency. We show that the single pre-trained transformers model can simultaneously achieve state-of-the-art performance on prediction of promoters, splice sites and transcription factor binding sites, after easy fine-tuning using small task-specific labeled data. Further, DNABERT enables direct visualization of nucleotide-level importance and semantic relationship within input sequences for better interpretability and accurate identification of conserved sequence motifs and functional genetic variant candidates. Finally, we demonstrate that pre-trained DNABERT with human genome can even be readily applied to other organisms with exceptional performance. We anticipate that the pre-trained DNABERT model can be fined tuned to many other sequence analyses tasks. The source code, pretrained and finetuned model for DNABERT are available at GitHub (https://github.com/jerryji1993/DNABERT). Supplementary data are available at Bioinformatics online.},
+  abstract        = {Deciphering the language of non-coding DNA is one of the fundamental problems in genome research. Gene regulatory code is highly complex due to the existence of polysemy and distant semantic relationship, which previous informatics methods often fail to capture especially in data-scarce scenarios. To address this challenge, we developed a novel pre-trained bidirectional encoder representation, named DNABERT, to capture global and transferrable understanding of genomic DNA sequences based on up and downstream nucleotide contexts. We compared DNABERT to the most widely used programs for genome-wide regulatory elements prediction and demonstrate its ease of use, accuracy and efficiency. We show that the single pre-trained transformers model can simultaneously achieve state-of-the-art performance on prediction of promoters, splice sites and transcription factor binding sites, after easy fine-tuning using small task-specific labeled data. Further, DNABERT enables direct visualization of nucleotide-level importance and semantic relationship within input sequences for better interpretability and accurate identification of conserved sequence motifs and functional genetic variant candidates. Finally, we demonstrate that pre-trained DNABERT with human genome can even be readily applied to other organisms with exceptional performance.},
   citation-subset = {IM},
   country         = {England},
   doi             = {10.1093/bioinformatics/btab083},
@@ -426,6 +400,65 @@ Last year, we introduced and open-sourced a neural network-based technique for n
   pubmodel        = {Print},
   pubstate        = {ppublish},
   revised         = {2024-04-25},
+}
+
+@Article{Vaswani2017,
+  author        = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N. and Kaiser, Lukasz and Polosukhin, Illia},
+  title         = {Attention Is All You Need},
+  year          = {2017},
+  month         = jun,
+  abstract      = {The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English-to-German translation task, improving over the existing best results, including ensembles by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.},
+  archiveprefix = {arXiv},
+  copyright     = {arXiv.org perpetual, non-exclusive license},
+  doi           = {10.48550/ARXIV.1706.03762},
+  eprint        = {1706.03762},
+  file          = {:Vaswani2017 - Attention Is All You Need.pdf:PDF:http\://arxiv.org/pdf/1706.03762v7},
+  keywords      = {Computation and Language (cs.CL), Machine Learning (cs.LG), FOS: Computer and information sciences},
+  primaryclass  = {cs.CL},
+  publisher     = {arXiv},
+}
+
+@Article{Hochreiter1997,
+  author          = {Hochreiter, S. and Schmidhuber, J.},
+  journal         = {Neural computation},
+  title           = {Long short-term memory.},
+  year            = {1997},
+  issn            = {0899-7667},
+  month           = nov,
+  pages           = {1735--1780},
+  volume          = {9},
+  abstract        = {Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error backflow. We briefly review Hochreiter's (1991) analysis of this problem, then address it by introducing a novel, efficient, gradient-based method called long short-term memory (LSTM). Truncating the gradient where this does not do harm, LSTM can learn to bridge minimal time lags in excess of 1000 discrete-time steps by enforcing constant error flow through constant error carousels within special units. Multiplicative gate units learn to open and close access to the constant error flow. LSTM is local in space and time; its computational complexity per time step and weight is O(1). Our experiments with artificial data involve local, distributed, real-valued, and noisy pattern representations. In comparisons with real-time recurrent learning, back propagation through time, recurrent cascade correlation, Elman nets, and neural sequence chunking, LSTM leads to many more successful runs, and learns much faster. LSTM also solves complex, artificial long-time-lag tasks that have never been solved by previous recurrent network algorithms.},
+  citation-subset = {IM},
+  completed       = {1997-11-07},
+  country         = {United States},
+  doi             = {10.1162/neco.1997.9.8.1735},
+  issn-linking    = {0899-7667},
+  issue           = {8},
+  keywords        = {Algorithms; Learning; Memory; Memory, Short-Term; Models, Neurological; Models, Psychological; Nerve Net, physiology; Neural Networks, Computer; Time Factors},
+  nlm-id          = {9426182},
+  owner           = {NLM},
+  pmid            = {9377276},
+  pubmodel        = {Print},
+  pubstate        = {ppublish},
+  revised         = {2022-04-09},
+}
+
+@Misc{Bycroft2023,
+  author       = {Brendan Bycroft},
+  howpublished = {Personal homepoage},
+  month        = feb,
+  title        = {LLM Visualization: 3D interactive model of a GPT-style LLM network running inference},
+  year         = {2023},
+  url          = {https://bbycroft.net/llm},
+}
+
+@Misc{Sanderson2024,
+  author       = {Grant Sanderson},
+  howpublished = {YouTube},
+  month        = oct,
+  title        = {3Blue1Brown: Neural networks course},
+  year         = {2024},
+  url          = {https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
