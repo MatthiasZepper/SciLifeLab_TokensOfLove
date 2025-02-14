@@ -1,8 +1,11 @@
-# Tokens of Love: Potentials and Pitfalls of Using Large Language Models
+# Tokens of Love 
+***Potentials and Pitfalls of Using Large Language Models***
+
+<center><img src="./figures/Valentine_s_Day_oil_painting_mathematic_matrices_formulas_and_computers.png"  width=50% alt="Tokens of appreciation - Mankind in love with AI"/></center>
 
 This repository contains the slides, literature, and figures for the talk "Tokens of Love" about Large Language Models (LLMs). It was delivered on February 14, 2025 (Valentin's Day) by [Matthias Zepper](https://www.linkedin.com/in/matthias-zepper-05b752212/) at [SciLifeLab](https://www.scilifelab.se) in Stockholm. 
 
-The presentation explores the potentials and pitfalls of using LLMs, covering topics such as AI integrations, generative models, prompt engineering, and the future of AI in scientific research.
+The presentation explores the potentials and pitfalls of using LLMs, covering topics such as AI integrations, generative models, prompt engineering, and the future of AI in scientific research. It is a gentle introduction to the topic for non-developers and geared towards wet lab biologists.
 
 ## Presentation slides
 
@@ -11,13 +14,14 @@ The presentation explores the potentials and pitfalls of using LLMs, covering to
 
 To compile the slides, ensure you have LaTeX with Beamer installed, you will need BibLaTeX/Biber for bibliography management. Compile using `lualatex` or `xelatex` followed by `biber` and another LaTeX run.
 
-My custom _SciLifeLab_ theme is included in the repository. It uses the colors of [the official visual guide](https://www.scilifelab.se/community-pages/resources/visual-identity/), but not the font faces. I took the liberty to replace Lato/Lora with [Biolinum by Philipp H. Poll](https://en.wikipedia.org/wiki/Linux_Libertine), which you may [have to install separately](https://ctan.org/pkg/libertine).
+> [!NOTE]
+> My custom [_SciLifeLab_ theme](https://github.com/MatthiasZepper/beamer-scilifelab) is included in the repository. It uses the colors of [the official visual guide](https://www.scilifelab.se/community-pages/resources/visual-identity/), but not the font faces. I took the liberty to replace Lato/Lora with [Biolinum by Philipp H. Poll](https://en.wikipedia.org/wiki/Linux_Libertine), which you may [have to install separately](https://ctan.org/pkg/libertine).
 
 ## Repository Structure
 
-- **./literature/**: Includes the bibliography file `scilifelabllms.bib` with references cited in the presentation.
-- **./figures/**: Contains all the images and figures used in the slides.
-- **./training_data_example/**: Some public training data examples that were eventually not used for the presentation.
+- **`./literature/`**: Includes the bibliography file `scilifelabllms.bib` with references cited in the presentation.
+- **`./figures/`**: Contains all the images and figures used in the slides.
+- **`./training_data_example/`**: Some public training data examples that were eventually not used for the presentation.
 
 ## Summary of Presentation Content
 
@@ -35,3 +39,5 @@ My custom _SciLifeLab_ theme is included in the repository. It uses the colors o
 ## License
 
 All original (self/AI-generated) content in these slides and this repository is released under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). However, certain copyrighted images, including works of art and cartoon characters, are used under Fair Use for nonprofit educational purposes and are not covered by this license.
+
+<center><img src="./figures/The_silhouette_of_a_standing_scientist_shown_from_behind_talking_to_a_robot_with_a_screen_head.png"  width=40% alt="A scientist interacting with humanoid AI."/></center>
