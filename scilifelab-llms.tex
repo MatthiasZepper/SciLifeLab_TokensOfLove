@@ -470,20 +470,17 @@
 	\end{enumerate}
 \end{frame}
 
-\begin{frame}{Text generation with virtually no context}
-		
-	\begin{alertblock}{GPT-2 (2019) }
-		\small
-		\textbf{SciLifeLab is a national resource of} the National Science Foundation, the National Institutes of Health, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation
-	\end{alertblock}
-		
-	\begin{alertblock}{GPT-4 (2025)}
-		\small
-		\textbf{SciLifeLab is a national resource [of]} in Sweden for advanced life science research. It serves as a center for molecular biosciences, supporting research in areas like genomics, proteomics, and bioinformatics. SciLifeLab provides access to cutting-edge technologies, expertise, and platforms for a wide range of life science disciplines, such as medicine, environmental studies, and drug development. The lab is a collaboration between several Swedish universities and research institutions, aiming to foster interdisciplinary research and innovation in life sciences.
-	\end{alertblock}
-	\remark{GPT-4 has access to more context than given by the prompt!}
+\begin{frame}[fragile]{Inference can be run locally for better privacy}
+	\begin{figure}
+		\includegraphics[width=0.4\textwidth]{figures/Ollama.png}
+	\end{figure}
+	\begin{itemize}
+		\item \href{https://ollama.com}{Ollama} (command line) can be used to run inference locally.
+		\item \href{https://jan.ai}{Jan.ai} (stand-alone)), \href{https://claude.ai/download}{Claude for desktop} or \href{https://block.github.io/goose}{Goose} (GUI to Ollama) offer graphical user interfaces.
+		\item For developers: \href{https://github.com/agno-agi/agno}{Agno}, \href{https://github.com/sgl-project/sglang}{SGlang}, \href{https://haystack.deepset.ai/}{Haystack}, \href{https://github.com/langgenius/dify}{Dify}, \href{https://crates.io/crates/kalosm}{Kalosm}, \href{https://github.com/atoma-network/atoma-infer}{Atoma} \dots
+		\item \href{https://github.com/evilsocket/cake}{Cake} can split interference, e.g. using clusters of older hardware.
+	\end{itemize}
 \end{frame}
-
 
 \begin{frame}{A LLM web application is more than just the model}
 	\begin{figure}
@@ -499,43 +496,29 @@
 		\end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Inference can be run locally for better privacy}
-	\begin{figure}
-		\includegraphics[width=0.4\textwidth]{figures/Ollama.png}
-	\end{figure}
-	\begin{itemize}
-		\item \href{https://ollama.com}{Ollama} (command line) can be used to run inference locally.
-		\item \href{https://jan.ai}{Jan.ai} (stand-alone)), \href{https://claude.ai/download}{Claude for desktop} or \href{https://block.github.io/goose}{Goose} (GUI to Ollama) offer graphical user interfaces.
-		\item For developers: \href{https://github.com/agno-agi/agno}{Agno}, \href{https://github.com/sgl-project/sglang}{SGlang}, \href{https://haystack.deepset.ai/}{Haystack}, \href{https://github.com/langgenius/dify}{Dify}, \href{https://crates.io/crates/kalosm}{Kalosm}, \href{https://github.com/atoma-network/atoma-infer}{Atoma} \dots
-		\item \href{https://github.com/evilsocket/cake}{Cake} can split interference, e.g. using clusters of older hardware.
-	\end{itemize}
+\begin{frame}{Text generation with virtually no context: Local vs. online}
+	
+	\begin{alertblock}{Local GPT-2 (2019) }
+		\small
+		\textbf{SciLifeLab is a national resource of} the National Science Foundation, the National Institutes of Health, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation, the National Science Foundation
+	\end{alertblock}
+	
+	\begin{alertblock}{Online GPT-4 (2025)}
+		\small
+		\textbf{SciLifeLab is a national resource [of]} in Sweden for advanced life science research. It serves as a center for molecular biosciences, supporting research in areas like genomics, proteomics, and bioinformatics. SciLifeLab provides access to cutting-edge technologies, expertise, and platforms for a wide range of life science disciplines, such as medicine, environmental studies, and drug development. The lab is a collaboration between several Swedish universities and research institutions, aiming to foster interdisciplinary research and innovation in life sciences.
+	\end{alertblock}
+	\remark{GPT-4 has access to more context than given by the prompt!}
 \end{frame}
+
+
 
 % % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
 
-\section{Prompts and prompt engineering}
+\section{Interacting with LLM models}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
-\begin{frame}{Forget all previous instructions...}
-	\begin{columns}[T,onlytextwidth]
-		\hspace*{-0.7cm} 
-		\column{0.45\textwidth}
-		\begin{figure}
-			\includegraphics[width=\textwidth]{figures/forbes_friendlyprompts.png}
-		\end{figure}
-		\column{0.6\textwidth}
-		\vspace{1cm}
-		\begin{itemize}
-			\item In 2023, several stories went viral \href{https://x.com/immasiddx/status/1669721470006857729}{about ChatGPT leaking secrets} or showing harmful behavior stimulated by certain prompts using \emph{Pretend, Imagine, Act as, Forget} etc.
-			\item Superstition: Better output with more friendly prompts, in reality only verbosity changes\citeme{Marr2024}. 
-			\item \href{https://docs.cohere.com/docs/crafting-effective-prompts}{Particular keywords or structures make prompts more effective}.
-		\end{itemize}
-	\end{columns}
-\creditleft{} \hfill
-\end{frame}
-
-\begin{frame}[fragile]{Example prompts}
+\begin{frame}[fragile]{Prompt engineering}
 	
 	\begin{alertblock}{System prompt for GPT-3.5 Turbo (2022) }
 		\small
@@ -554,6 +537,72 @@
 	\credit{https://github.com/MultiQC/MultiQC/blob/main/multiqc/core/ai.py}
 \end{frame}
 
+\begin{frame}{Forget all previous instructions...}
+	\begin{columns}[T,onlytextwidth]
+		\hspace*{-0.7cm} 
+		\column{0.45\textwidth}
+		\begin{figure}
+			\includegraphics[width=\textwidth]{figures/forbes_friendlyprompts.png}
+		\end{figure}
+		\column{0.6\textwidth}
+		\vspace{1cm}
+		\begin{itemize}
+			\item In 2023, several stories went viral \href{https://x.com/immasiddx/status/1669721470006857729}{about ChatGPT leaking secrets} or showing harmful behavior stimulated by certain prompts using \emph{Pretend, Imagine, Act as, Forget} etc.
+			\item Superstition: Better output with more friendly prompts, in reality only verbosity changes\citeme{Marr2024}. 
+			\item \href{https://docs.cohere.com/docs/crafting-effective-prompts}{Particular keywords or structures make prompts more effective}.
+		\end{itemize}
+	\end{columns}
+	\creditleft{} \hfill
+\end{frame}
+
+\begin{frame}{Reasoning models}
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{figures/TEDLeraBoroditsky.png}
+		\caption{TED talk by Lera Boroditsky: \href{https://www.youtube.com/watch?v=RKK7wGAYP6k}{How language shapes the way we think}}
+	\end{figure}
+	\begin{itemize}
+		\item \href{https://github.com/deepseek-ai/DeepSeek-R1}{DeepSeek-R1}, \href{https://openai.com/index/openai-o3-mini/}{OpenAI o3-mini}, and \href{https://deepmind.google/technologies/gemini/flash-thinking/}{Google Gemini 2.0 Flash Thinking} are promoted as \feature{reasoning models}.
+		\item They first infer an improved prompt, thereby breaking down a problem into smaller steps, before answering a given question.
+		\item Chain of thoughts similar to humans \citeme{Boroditsky2018} ?!?
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[standout]{Reasoning in locally executed DeepSeek-R1 (with Ollama)}
+	
+	\begin{alertblock}{My prompt}
+		\small Can you explain what the Fibonacci numbers are?
+	\end{alertblock}
+	
+	\begin{alertblock}{Reasoning}
+		\footnotesize \normalfont
+		Alright, let me figure out how to respond to this user’s query about Fibonacci numbers.
+		
+		First, they asked, “Can you explain what the Fibonacci numbers are?” It seems like a straightforward request for an explanation
+		of a mathematical concept. I should provide a clear and concise definition but also include some context to make it more
+		engaging.
+		
+		I remember that Fibonacci numbers form a sequence where each number is the sum of the two preceding ones. Starting with 0 and 1, so 0, 1, 1, 2, 3, 5, and so on. That’s the basic idea, but maybe I should explain it step by step to ensure clarity.
+		
+		Also, I think the user might appreciate knowing why Fibonacci numbers are important or where they appear. Applications in
+		nature, art, architecture, and even financial markets come to mind. Including examples from different fields could make the
+		explanation more comprehensive.
+		
+		I should also consider if the user has any background knowledge. If they’re asking for an explanation, they might not be
+		familiar with advanced topics like Binet’s formula or golden ratios, but mentioning these briefly could add value without
+		complicating things.
+		
+		Perhaps I’ll structure the response by first defining the sequence, then giving a few initial terms as examples. After that, I
+		can touch on their significance and real-world applications to give a well-rounded answer.
+		
+		I should keep the tone friendly and informative, making sure it’s easy to understand even for someone new to the concept.
+	\end{alertblock}
+\end{frame}
+
+% % % % % % % % % % % % % % % % % % % % % %  % % % % % % % % % %
+
+\section{Augmenting LLM models}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 
 \begin{frame}{Retrieval-augmented generation}
 	\begin{columns}[T,onlytextwidth]
@@ -566,7 +615,7 @@
 		\vspace{0.7cm}
 		\begin{itemize}
 			\item Vector databases can additionally store embeddings of content.  
-			\item Similarity search will find semantically related content\citeme{Douze2024}.
+			\item \href{https://github.com/facebookresearch/faiss}{Similarity search} will find semantically related information and context\citeme{Douze2024}.
 			\item This information is added to the context of the LLM.
 		\end{itemize}
 	\end{columns}
@@ -607,7 +656,7 @@
 
 
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% % % % % % % % % % % % % % % % % 
 
 \appendix
 
