@@ -476,7 +476,7 @@
 	\end{figure}
 	\begin{itemize}
 		\item \href{https://ollama.com}{Ollama} (command line) can be used to run inference locally.
-		\item \href{https://jan.ai}{Jan.ai} (stand-alone)), \href{https://claude.ai/download}{Claude for desktop} or \href{https://block.github.io/goose}{Goose} (GUI to Ollama) offer graphical user interfaces.
+		\item \href{https://jan.ai}{Jan.ai}, \href{https://claude.ai/download}{Claude for desktop} or \href{https://block.github.io/goose}{Goose} (GUI to Ollama) offer graphical user interfaces.
 		\item For developers: \href{https://github.com/agno-agi/agno}{Agno}, \href{https://github.com/sgl-project/sglang}{SGlang}, \href{https://haystack.deepset.ai/}{Haystack}, \href{https://github.com/langgenius/dify}{Dify}, \href{https://crates.io/crates/kalosm}{Kalosm}, \href{https://github.com/atoma-network/atoma-infer}{Atoma} \dots
 		\item \href{https://github.com/evilsocket/cake}{Cake} can split interference, e.g. using clusters of older hardware.
 	\end{itemize}
@@ -615,8 +615,8 @@
 		\vspace{0.7cm}
 		\begin{itemize}
 			\item Vector databases can additionally store embeddings of content.  
-			\item \href{https://github.com/facebookresearch/faiss}{Similarity search} will find semantically related information and context\citeme{Douze2024}.
-			\item This information is added to the context of the LLM.
+			\item \href{https://github.com/facebookresearch/faiss}{Similarity search} will find semantically related information to add to the context\citeme{Douze2024}.
+			\item This improves LLM performance dramatically\citeme{Alammar2022}.
 		\end{itemize}
 	\end{columns}
 	\begin{columns}[T,onlytextwidth]
@@ -650,6 +650,23 @@
 			\item negative, when they point in opposite directions.
 		\end{itemize}
 	\end{columns}
+\end{frame}
+
+
+\begin{frame}{MCP - Model Context Protocol}
+	\begin{figure}
+		\includegraphics[width=0.6\textwidth]{figures/ModelContextProtocol.png}
+	\end{figure}
+	\begin{itemize}
+		\item RAG requires an external system to augment the context.
+		\item The \href{https://modelcontextprotocol.io/introduction}{Model Context Protocol} allows LLMs to autonomously interact with other software, e.g. \href{https://github.com/grll/pubmedmcp}{to search for scientific publications}.
+		\item MCP servers can provide three main types of capabilities:
+		\begin{enumerate}
+			\item \feature{Resources}: File-like data that can be read by clients (like API responses or file contents)
+			\item  \feature{Functions} that can be called by the LLM (with user approval)
+			\item \feature{Prompts}: Pre-written templates that help users accomplish specific tasks
+		\end{enumerate}
+\end{itemize}
 \end{frame}
 
 % % % % % % % % % % % % % % % % % 
