@@ -477,7 +477,7 @@
 	\begin{itemize}
 		\item \href{https://ollama.com}{Ollama} (command line) can be used to run inference locally.
 		\item \href{https://jan.ai}{Jan.ai}, \href{https://claude.ai/download}{Claude for desktop} or \href{https://block.github.io/goose}{Goose} (GUI to Ollama) offer graphical user interfaces.
-		\item For developers: \href{https://github.com/agno-agi/agno}{Agno}, \href{https://github.com/sgl-project/sglang}{SGlang}, \href{https://haystack.deepset.ai/}{Haystack}, \href{https://github.com/langgenius/dify}{Dify}, \href{https://crates.io/crates/kalosm}{Kalosm}, \href{https://github.com/atoma-network/atoma-infer}{Atoma} \dots
+		\item Frameworks for developers: \href{https://github.com/agno-agi/agno}{Agno}, \href{https://github.com/sgl-project/sglang}{SGlang}, \href{https://github.com/vllm-project/vllm}{vLLM}, \href{https://haystack.deepset.ai/}{Haystack}, \href{https://github.com/langgenius/dify}{Dify}, \href{https://crates.io/crates/kalosm}{Kalosm}, \href{https://github.com/atoma-network/atoma-infer}{Atoma} and many, many more \dots
 		\item \href{https://github.com/evilsocket/cake}{Cake} can segment models, so inference runs on clusters of older hardware.
 	\end{itemize}
 \end{frame}
@@ -703,7 +703,7 @@
 
 \section{Recommended resources}
 
-\begin{frame}{More Information on Transformers}
+\begin{frame}{Recommended resources: Beginner-friendly}
 	\begin{block}{\href{https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi}{3Blue1Brown} course on neural networks\citeme{Sanderson2024}}
 	\begin{itemize}
 		\item \href{https://www.youtube.com/watch?v=wjZofJX0v4M&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=6}{Transformers}
@@ -713,11 +713,47 @@
 \end{block}
 	\begin{block}{Other resources}
 	\begin{itemize}
-		\item \href{https://bbycroft.net/llm}{3D interactive models} of a GPT-style LLM networks running inference\citeme{Bycroft2023}
-		\item \href{http://jalammar.github.io/illustrated-transformer/}{The Illustrated Transformer}\citeme{Alammar2018}
+		\item \href{https://www.sas.com/en_us/insights/analytics/neural-networks.html}{Artificial Neural Networks: What they are and why they matter}
+		\item \href{https://huggingface.co/learn/agents-course/en/unit1/introduction}{Introduction to AI agents}
+
 	\end{itemize}
 	\end{block}
 \end{frame}
+
+\begin{frame}{Recommended resources: Advanced}
+	\begin{block}{General knowledge}
+		\begin{itemize}
+			\item \href{https://bbycroft.net/llm}{3D interactive models} of GPT-style LLM networks running inference\citeme{Bycroft2023}
+			\item \href{http://jalammar.github.io/illustrated-transformer/}{The Illustrated Transformer}\citeme{Alammar2018}
+		     \item  \href{https://medium.com/@yacinebouaouni07/from-rnns-to-transformers-a-journey-through-the-evolution-of-attention-mechanisms-in-nlp-ef937e2c8d05}{From RNNs to Transformers: A Journey Through the Evolution of Attention Mechanisms in NLP}
+		     \item \href{https://github.com/ZJU-LLMs/Foundations-of-LLMs/blob/main/Foundations_of_LLMs(English_version)/Foundation_of_LLMs.pdf}{Foundations of LLMs} - a free book in English and Chinese on the subject.
+		\end{itemize}
+	\end{block}
+	\begin{block}{LLMs in Biology}
+	\begin{itemize}
+			\item \href{https://varchat.engenome.com/}{VarChat} is a chat-bot fine-tuned on scientific literature for genomic variant interpretation\citeme{DePaoli2024}.
+		\item \href{https://github.com/raphaelmourad/LLM-for-genomics-training}{Training on large language models for genomics}
+		\item \href{https://huggingface.co/learn/agents-course/en/unit1/introduction}{Introduction to AI agents}\citeme{Mehandru2025}
+	\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+\begin{frame}{Recommended resources: Code yourself}
+	\begin{block}{Model foundations}
+		\begin{itemize}
+			\item  \href{https://github.com/karpathy/micrograd}{Micrograd} (Python) and \href{https://github.com/sebinsua/micrograd-rs/blob/main/src/nn.rs}{its well-annotated Rust port}  teach the essential intuitions and mathematical foundations of neural networks.
+			\item The \href{https://github.com/karpathy/nanoGPT}{nanoGPT} repository contains the code necessary to train/fine-tune GPTs. Its author Andrej Karpathy also provides an associated \href{https://www.youtube.com/watch?v=kCc8FmEb1nY}{video walk-through}.   
+		\end{itemize}
+	\end{block}
+	\begin{block}{Develop with AI}
+	\begin{itemize}
+		\item \href{https://github.com/mlc-ai/web-llm}{WebLLM} allows LLM inference right on the computer of the person using the web application without installation. For people with decent hardware, no data needs to be sent anywhere. 
+	\end{itemize}
+\end{block}
+\end{frame}
+
 
 \section{Supplementary slides}
 
