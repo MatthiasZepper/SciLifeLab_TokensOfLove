@@ -1,7 +1,11 @@
+![SciLifeLab Sweden](additional_graphics/scilifelab-repoheader.svg)
+
 # Tokens of Love 
 ***Potentials and Pitfalls of Using Large Language Models***
 
-<center><img src="./figures/Valentine_s_Day_oil_painting_mathematic_matrices_formulas_and_computers.png"  width=50% alt="Tokens of appreciation - Mankind in love with AI"/></center>
+<p align="center">
+<img src="./figures/Valentine_s_Day_oil_painting_mathematic_matrices_formulas_and_computers.png"  width=50% alt="Tokens of appreciation - Mankind in love with AI"/>
+</p>
 
 This repository contains the slides, literature, and figures for the talk "Tokens of Love" about Large Language Models (LLMs). It was delivered on February 14, 2025 (Valentine's Day) by [Matthias Zepper](https://www.linkedin.com/in/matthias-zepper-05b752212/) at [SciLifeLab](https://www.scilifelab.se) in Stockholm. 
 
@@ -40,4 +44,6 @@ To compile the slides, ensure you have LaTeX with Beamer installed, you will nee
 
 All original (self/AI-generated) content in these slides and this repository is released under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). However, certain copyrighted images, including works of art and cartoon characters, are used under Fair Use for nonprofit educational purposes and are not covered by this license.
 
-<center><img src="./figures/The_silhouette_of_a_standing_scientist_shown_from_behind_talking_to_a_robot_with_a_screen_head.png"  width=40% alt="A scientist interacting with humanoid AI."/></center>
+<p align="center">
+<img src="./figures/The_silhouette_of_a_standing_scientist_shown_from_behind_talking_to_a_robot_with_a_screen_head.png"  width=40% alt="A scientist interacting with humanoid AI."/>
+</p>
